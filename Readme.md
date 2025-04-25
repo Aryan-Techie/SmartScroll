@@ -6,9 +6,9 @@
 <p align="center">Use your volume knob like a scroll wheel — smart, clean, and customisable.</p>
 
 <p align="center">
-  <a href="https://github.com/Aryan-Techie/Smart-Scroll/releases"><img src="https://img.shields.io/github/v/release/Aryan-Techie/Smart-Scroll?style=flat-square"></a>
-  <a href="https://github.com/Aryan-Techie/Smart-Scroll/stargazers"><img src="https://img.shields.io/github/stars/Aryan-Techie/Smart-Scroll?style=flat-square"></a>
-  <a href="https://github.com/Aryan-Techie/Smart-Scroll/issues"><img src="https://img.shields.io/github/issues/Aryan-Techie/Smart-Scroll?style=flat-square"></a>
+  <a href="https://github.com/Aryan-Techie/SmartScroll/releases"><img src="https://img.shields.io/github/v/release/Aryan-Techie/SmartScroll?style=flat-square"></a>
+  <a href="https://github.com/Aryan-Techie/SmartScroll/stargazers"><img src="https://img.shields.io/github/stars/Aryan-Techie/SmartScroll?style=flat-square"></a>
+  <a href="https://github.com/Aryan-Techie/SmartScroll/issues"><img src="https://img.shields.io/github/issues/Aryan-Techie/SmartScroll?style=flat-square"></a>
 </p>
 
 ---
@@ -46,7 +46,7 @@ No more awkward gestures or reaching for the mouse — **scroll like a pro with 
 
 ## ⚙️ Installation
 
-1. Download the latest release from the [Releases page](https://github.com/Aryan-Techie/Smart-Scroll/releases).
+1. Download the latest release from the [Releases page](https://github.com/Aryan-Techie/SmartScroll/releases).
 2. Extract and run `SmartScroll.exe` *(or the `.ahk` script if you have AutoHotkey installed)*.
 3. Use `Ctrl+Shift+S` to open the mode selection GUI.
 
@@ -75,7 +75,7 @@ Based on your selection, it switches the knob from volume to scroll mode. It’s
 
 ## 🧾 Releases
 
-You can find the compiled `.exe` files and changelogs in the [Releases section](https://github.com/Aryan-Techie/Smart-Scroll/releases). Each release is tagged with version numbers and includes:
+You can find the compiled `.exe` files and changelogs in the [Releases section](https://github.com/Aryan-Techie/SmartScroll/releases). Each release is tagged with version numbers and includes:
 - What's new
 - Bug fixes
 - Improvements
