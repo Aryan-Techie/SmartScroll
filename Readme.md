@@ -114,8 +114,8 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## ✍️ Author
 
-Made with intent by **[Aryan Techie](https://aryan.aroice.in)**  
-For updates, ideas, or connecting: [@realaroice](https://x.com/realaroice)
+Made with 💌 by **[Aryan Techie](https://aryan.aroice.in)**  
+For updates, ideas, or connecting: [@aryantechie](https://instagram.com/aryantechie)
 
 ---
 
