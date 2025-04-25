@@ -6,9 +6,9 @@
 <p align="center">Use your volume knob like a scroll wheel — smart, clean, and customisable.</p>
 
 <p align="center">
-  <a href="https://github.com/Aryan-Techie/Smart-Scroll/releases"><img src="assets/icons/png/icon-32x32.png" style="height: 20px; vertical-align: middle;"> Releases</a> •
-  <a href="https://github.com/Aryan-Techie/Smart-Scroll/stargazers"><img src="assets/icons/png/icon-32x32.png" style="height: 20px; vertical-align: middle;"> Stars</a> •
-  <a href="https://github.com/Aryan-Techie/Smart-Scroll/issues"><img src="assets/icons/png/icon-32x32.png" style="height: 20px; vertical-align: middle;"> Issues</a>
+  <a href="https://github.com/Aryan-Techie/Smart-Scroll/releases"><img src="https://img.shields.io/github/v/release/Aryan-Techie/Smart-Scroll?style=flat-square"></a>
+  <a href="https://github.com/Aryan-Techie/Smart-Scroll/stargazers"><img src="https://img.shields.io/github/stars/Aryan-Techie/Smart-Scroll?style=flat-square"></a>
+  <a href="https://github.com/Aryan-Techie/Smart-Scroll/issues"><img src="https://img.shields.io/github/issues/Aryan-Techie/Smart-Scroll?style=flat-square"></a>
 </p>
 
 ---
