@@ -15,7 +15,7 @@
 
 ## 🧠 What is Smart Scroll?
 
-**Smart Scroll by Aroice** transforms your media dial or volume knob into a powerful scroll wheel. With customizable modes that trigger scroll behavior based on system states (like Mute, Scroll Lock, Num Lock), you gain seamless, ergonomic navigation right at your fingertips.
+**Smart Scroll by Aroice** transforms your media dial or volume knob into a powerful scroll wheel. <br>With customizable modes that trigger scroll behavior based on system states (like Mute, Scroll Lock, Num Lock), <br>you gain seamless, ergonomic navigation right at your fingertips.
 
 No more awkward gestures or reaching for the mouse — **scroll like a pro with the tools you already have**.
 
