@@ -69,7 +69,17 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
 
 ## 🎬 Demo
 
-> *(Coming soon!)*  
+<p align="center">
+  <iframe width="650" height="400" src="https://www.youtube.com/embed/5ESz2VQO_NY" title="Smart Scroll Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/5ESz2VQO_NY" target="_blank">
+    <img src="https://img.shields.io/badge/Watch%20Demo-YouTube-%23FF0000?style=for-the-badge&logo=youtube" alt="Watch on YouTube">
+  </a>
+</p>
+
+<p align="center"><em>Smart Scroll in action</em></p>
 
 ---
 
