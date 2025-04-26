@@ -69,9 +69,13 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
 
 ## 🎬 Demo
 
-<p align="center">
-  <iframe width="650" height="400" src="https://www.youtube.com/embed/5ESz2VQO_NY" title="Smart Scroll Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
+<object width="425" height="350">
+  <param name="movie" value="https://www.youtube.com/watch?v=5ESz2VQO_NY" />
+  <param name="wmode" value="transparent" />
+  <embed src="https://www.youtube.com/watch?v=5ESz2VQO_NY"
+         type="application/x-shockwave-flash"
+         wmode="transparent" width="425" height="350" />
+</object>
 
 <p align="center">
   <a href="https://youtu.be/5ESz2VQO_NY" target="_blank">
