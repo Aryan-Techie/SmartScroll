@@ -1,9 +1,18 @@
 RewriteEngine On
 
-# Remove .html extension from URLs
+# First, check that the requested URL isn't an existing directory or file
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Then, check if the URL without .html exists as a file
+RewriteCond %{REQUEST_FILENAME}.html -f
+
+# If it does, serve that file
+RewriteRule ^(.*)$ $1.html [L]
+
+# For URLs that already have .html, redirect to non-.html version 
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
 
 # Redirect index.html to root directory
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
@@ -33,3 +42,7 @@ DirectoryIndex index.html
   ExpiresByType image/x-icon "access plus 1 year"
   ExpiresDefault "access plus 2 days"
 </IfModule>
+
+# Force HTTPS (uncomment if needed)
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
