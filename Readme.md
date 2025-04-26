@@ -54,11 +54,6 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
 - Runs silently in the background.
 - Minimal CPU and RAM footprint.
 
-### 🚀 Lightweight and Fast:
-
-- Runs silently in the background.
-- Minimal CPU and RAM footprint.
-
 <p align="center">
   <img src="./Media/Resource-Monitor.png" width="900" alt="Task Manager showing minimal resource usage">
   <br>
