@@ -164,11 +164,14 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 If Smart Scroll made your workflow better, consider supporting its development. 
 <br> Your contribution helps keep it free and evolving!
 
-<a href="https://razorpay.me/@aroice" target="_blank">
-  <img src="https://img.shields.io/badge/Support%20via-Razorpay-blueviolet?style=for-the-badge&logo=razorpay" alt="Support via Razorpay">
-</a>
-
-
+<p>
+  <a href="https://razorpay.me/@aroice" target="_blank">
+    <img src="https://img.shields.io/badge/Support%20via-Razorpay-blueviolet?style=for-the-badge&logo=razorpay" alt="Support via Razorpay">
+  </a>
+  <a href="https://github.com/sponsors/Aryan-Techie" target="_blank">
+    <img src="https://img.shields.io/badge/Sponsor%20on-GitHub-%23EA4AAA?style=for-the-badge&logo=github" alt="Sponsor on GitHub">
+  </a>
+</p>
 
 ---
 
@@ -184,7 +187,7 @@ Made with ❤️ by **[Aryan Techie](https://aryan.aroice.in)** (aka Aroice)
 
 ---
 
-## 🚀 Smart Scroll — Turn Your Hardware Into Magic. 🎛️
+## 🚀 Smart Scroll — Enhance Your Workflow & Reimagine Your Volume Knob. 🎛️
 
 
 
