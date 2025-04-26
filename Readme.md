@@ -27,7 +27,7 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
 
 - ⚡ **Intuitive scrolling.**
 - 🎯 **Zero conflicts.**
-- 🎵 **Perfect for media dials, control surfaces, and custom keyboards.**
+- 🎛️ **Perfect for Keyboard with Vol. Knob, control surfaces, and custom keyboards.**
 
 ---
 
