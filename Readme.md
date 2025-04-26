@@ -69,7 +69,12 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
 
 ## 🎬 Demo
 
-![DEMO GIF - click below button to watch Demo Clip on YouTube.](./Media/demo.mp4)
+
+<video width="900" autoplay loop muted playsinline>
+  <source src="./Media/demo.webm" type="video/webm">
+  <source src="./Media/demo.mp4" type="video/mp4">
+  DEMO Clip - click below button to Watch on YouTube.
+</video>
 
 <p align="left">
   <a href="https://youtu.be/5ESz2VQO_NY" target="_blank">
@@ -77,9 +82,6 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
   </a>
 </p>
 
-<video src="./Media/demo.webm" width="320" height="240" controls>
-  Your browser does not support the video tag.
-</video>
 
 <p align="left"><em>Smart Scroll in action</em></p>
 
