@@ -69,13 +69,17 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
 
 ## 🎬 Demo
 
-![DEMO GIF - click below button to watch Demo Clip on YouTube.](./Media/demo.webm)
+![DEMO GIF - click below button to watch Demo Clip on YouTube.](./Media/demo.mp4)
 
 <p align="left">
   <a href="https://youtu.be/5ESz2VQO_NY" target="_blank">
     <img src="https://img.shields.io/badge/Watch%20Demo-YouTube-%23FF0000?style=for-the-badge&logo=youtube" alt="Watch on YouTube">
   </a>
 </p>
+
+<video src="./Media/demo.webm" width="320" height="240" controls>
+  Your browser does not support the video tag.
+</video>
 
 <p align="left"><em>Smart Scroll in action</em></p>
 
