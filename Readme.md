@@ -69,21 +69,15 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
 
 ## 🎬 Demo
 
-<object width="425" height="350">
-  <param name="movie" value="https://www.youtube.com/watch?v=5ESz2VQO_NY" />
-  <param name="wmode" value="transparent" />
-  <embed src="https://www.youtube.com/watch?v=5ESz2VQO_NY"
-         type="application/x-shockwave-flash"
-         wmode="transparent" width="425" height="350" />
-</object>
+![DEMO GIF - click below button to watch Demo Clip on YouTube.](./Media/demo.webm)
 
-<p align="center">
+<p align="left">
   <a href="https://youtu.be/5ESz2VQO_NY" target="_blank">
     <img src="https://img.shields.io/badge/Watch%20Demo-YouTube-%23FF0000?style=for-the-badge&logo=youtube" alt="Watch on YouTube">
   </a>
 </p>
 
-<p align="center"><em>Smart Scroll in action</em></p>
+<p align="left"><em>Smart Scroll in action</em></p>
 
 ---
 
