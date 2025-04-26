@@ -70,7 +70,7 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
 ## 🎬 Demo
 
 
-![DEMO Clip - click below button to Watch on YouTube.](./Media/demo.gif)
+![DEMO Clip - click below button to Watch on YouTube.](https://github.com/Aryan-Techie/SmartScroll/raw/main/Media/demo.gif)
 
 <!-- <video width="900" autoplay loop muted playsinline>
   <source src="./Media/demo.webm" type="video/webm">
