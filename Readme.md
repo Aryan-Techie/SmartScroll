@@ -70,6 +70,8 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
 ## 🎬 Demo
 
 
+![DEMO Clip - click below button to Watch on YouTube.](./Media/demo.mp4)
+
 <video width="900" autoplay loop muted playsinline>
   <source src="./Media/demo.webm" type="video/webm">
   <source src="./Media/demo.mp4" type="video/mp4">
