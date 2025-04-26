@@ -60,7 +60,7 @@ Seamlessly trigger scrolling based on system states like Mute, Scroll Lock, or N
 - Minimal CPU and RAM footprint.
 
 <p align="center">
-  <img src="./media/Resource-Monitor.png" width="900" alt="Task Manager showing minimal resource usage">
+  <img src="./Media/Resource-Monitor.png" width="900" alt="Task Manager showing minimal resource usage">
   <br>
   <em>Smart Scroll using minimal system resources</em>
 </p>
