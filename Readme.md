@@ -168,6 +168,7 @@ If Smart Scroll made your workflow better, consider supporting its development.
   <a href="https://razorpay.me/@aroice" target="_blank">
     <img src="https://img.shields.io/badge/Support%20via-Razorpay-blueviolet?style=for-the-badge&logo=razorpay" alt="Support via Razorpay">
   </a>
+  &nbsp;
   <a href="https://github.com/sponsors/Aryan-Techie" target="_blank">
     <img src="https://img.shields.io/badge/Sponsor%20on-GitHub-%23EA4AAA?style=for-the-badge&logo=github" alt="Sponsor on GitHub">
   </a>
