@@ -39,24 +39,46 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // FAQ accordion functionality
+    // Improved FAQ accordion functionality
     const faqItems = document.querySelectorAll('.faq-item');
     
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const answerContent = answer.querySelector('.faq-answer-content');
         
+        // Set initial heights to 0
+        answer.style.height = '0px';
+        
+        // Create a click handler with better performance
         question.addEventListener('click', () => {
+            // Get the current state
             const isActive = item.classList.contains('active');
             
-            // Close all FAQ items
-            faqItems.forEach(faq => {
-                faq.classList.remove('active');
+            // If current FAQ is already active, just close it
+            if (isActive) {
+                item.classList.remove('active');
+                answer.style.height = '0px';
+                return;
+            }
+            
+            // Close all other FAQs first (more efficient to do this first)
+            faqItems.forEach(faqItem => {
+                if (faqItem !== item && faqItem.classList.contains('active')) {
+                    faqItem.classList.remove('active');
+                    faqItem.querySelector('.faq-answer').style.height = '0px';
+                }
             });
             
-            // If the clicked item wasn't active, make it active
-            if (!isActive) {
+            // Then open the clicked one (prevents layout thrashing)
+            requestAnimationFrame(() => {
+                // Get content height
+                const contentHeight = answerContent.getBoundingClientRect().height;
+                
+                // Open the FAQ
                 item.classList.add('active');
-            }
+                answer.style.height = contentHeight + 'px';
+            });
         });
     });
     
@@ -143,4 +165,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+    
+    // Handle window resize for FAQ items that are open
+    window.addEventListener('resize', () => {
+        const activeFAQs = document.querySelectorAll('.faq-item.active');
+        
+        activeFAQs.forEach(item => {
+            const answer = item.querySelector('.faq-answer');
+            const answerContent = answer.querySelector('.faq-answer-content');
+            
+            // Update height to match new content size after resize
+            answer.style.height = answerContent.getBoundingClientRect().height + 'px';
+        });
+    });
 });

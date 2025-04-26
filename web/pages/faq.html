@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Smart Scroll</title>
+    <meta name="description" content="Answers to common questions about Smart Scroll, the Windows utility that transforms your volume knob into a smooth scroll wheel.">
+    <link rel="icon" href="../../assets/icons/png/icon-32x32.png" sizes="32x32">
+    <link rel="icon" href="../../assets/icons/png/icon-128x128.png" sizes="128x128">
+    <link rel="icon" href="../../assets/icons/png/icon-256x256.png" sizes="256x256">
+    <link rel="icon" href="../../assets/icons/png/icon-512x512.png" sizes="512x512">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional FAQ-specific styles */
+        .faq-page-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-category {
+            margin-bottom: 60px;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--gray-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .category-icon img {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .search-container {
+            margin-bottom: 40px;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: var(--radius);
+            border: 1px solid var(--gray);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background-image: url('../../Releases/V-1.0.0/assets/idea.png');
+            background-repeat: no-repeat;
+            background-size: 20px;
+            background-position: 15px center;
+            padding-left: 45px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(58, 123, 202, 0.2);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-nav {
+            background-color: var(--gray-light);
+            padding: 15px;
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+        }
+        
+        .category-nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .category-nav-link {
+            padding: 8px 15px;
+            background-color: var(--white);
+            border-radius: 30px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .category-nav-link:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="../../assets/icons/png/icon-48x48.png" alt="Smart Scroll Logo">
+                    <a href="../../index.html"><span>Smart Scroll</span></a>
+                </div>
+                <div class="nav-links">
+                    <a href="../../index.html#features" class="nav-link">Features</a>
+                    <a href="../../index.html#how-it-works" class="nav-link">How It Works</a>
+                    <a href="../../index.html#about" class="nav-link">Origin</a>
+                    <a href="../../index.html#documentation" class="nav-link">Documentation</a>
+                    <a href="../../index.html#faq" class="nav-link">FAQ</a>
+                </div>
+                <a href="../../index.html#download" class="btn btn-primary nav-cta">Download</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with smaller height -->
+    <section class="hero" style="padding: 120px 0 60px;">
+        <div class="container">
+            <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h1>Frequently Asked Questions</h1>
+                <p class="hero-subtitle">Find answers to common questions about Smart Scroll</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content Section -->
+    <section class="faq" style="padding-top: 60px;">
+        <div class="container">
+            <div class="faq-page-container">
+                <!-- Search Box -->
+                <div class="search-container">
+                    <input type="text" class="search-box" id="faqSearch" placeholder="Search the FAQ...">
+                </div>
+
+                <!-- Category Navigation -->
+                <div class="category-nav">
+                    <div class="category-nav-links">
+                        <a href="#general" class="category-nav-link">General Questions</a>
+                        <a href="#technical" class="category-nav-link">Technical Details</a>
+                        <a href="#configuration" class="category-nav-link">Configuration & Settings</a>
+                        <a href="#troubleshooting" class="category-nav-link">Troubleshooting</a>
+                        <a href="#compatibility" class="category-nav-link">Compatibility</a>
+                        <a href="#development" class="category-nav-link">Development & Contributing</a>
+                    </div>
+                </div>
+
+                <!-- General Questions -->
+                <div id="general" class="faq-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="../../Releases/V-1.0.0/assets/idea.png" alt="General Questions">
+                        </div>
+                        <h2 class="category-title">General Questions</h2>
+                    </div>
+
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What makes Smart Scroll different from other scrolling tools?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Smart Scroll uniquely repurposes your existing volume knob or media dial as a scroll wheel without requiring additional hardware. It intelligently switches between volume and scrolling functions based on system states like Mute, Scroll Lock, or Num Lock.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Does Smart Scroll work with all volume knobs?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Yes! Smart Scroll works with any input device that triggers volume up/down events in Windows, including built-in keyboard volume knobs, media controllers, and even software-based volume controls.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Will this affect my normal volume control functionality?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>No. Smart Scroll only transforms your volume knob into a scroll wheel when your chosen mode is active (Mute is ON, Scroll Lock is ON, or Num Lock is OFF). Otherwise, your volume controls function normally.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Is Smart Scroll free to use?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Yes, Smart Scroll is completely free and open-source! If you find it valuable, consider supporting its development through the <a href="https://github.com/sponsors/Aryan-Techie" target="_blank">GitHub Sponsors</a> or <a href="https://razorpay.me/@aroice" target="_blank">Razorpay</a> donation links.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Why was Smart Scroll created?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Smart Scroll was born from a simple observation: volume knobs are incredibly satisfying to use, but they're limited to just one function. For those who spend hours coding, reading, and navigating long documents, repurposing this tactile control for something done hundreds of times a day—scrolling—just made sense.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Questions -->
+                <div id="technical" class="faq-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="../../Releases/V-1.0.0/assets/key.png" alt="Technical Questions">
+                        </div>
+                        <h2 class="category-title">Technical Details</h2>
+                    </div>
+
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Does Smart Scroll slow down my computer?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Not at all. Smart Scroll is designed to be extremely lightweight, using minimal CPU and RAM. It runs efficiently in the background without affecting system performance.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Can I use Smart Scroll on multiple monitors?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Yes! Smart Scroll works across all connected displays. It scrolls whichever window is currently active, regardless of which monitor it's on.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How does Smart Scroll work technically?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Smart Scroll uses AutoHotkey to intercept volume key events and convert them to scroll wheel events based on your selected mode. The program monitors system states (Mute status, Scroll Lock, or Num Lock) to determine when to transform the volume signals into scrolling actions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Does Smart Scroll log my keystrokes or collect any data?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>No. Smart Scroll does not collect any data, log keystrokes, or communicate with any servers. It's a completely offline utility that only intercepts volume key events when appropriate.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Configuration Questions -->
+                <div id="configuration" class="faq-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="../../Releases/V-1.0.0/assets/Save.png" alt="Configuration Questions">
+                        </div>
+                        <h2 class="category-title">Configuration & Settings</h2>
+                    </div>
+
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How do I change which mode Smart Scroll uses?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Press <code>WIN + Shift + F2</code> to open the settings GUI, or right-click the Smart Scroll icon in your system tray and select "Open". From there, you can select your preferred mode.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Can I set Smart Scroll to automatically start with Windows?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Yes! This option is already enabled by default. You can toggle it in the settings menu if needed by opening the app (WIN + Shift + F2), going to the Settings tab, and using the "Start with Windows" checkbox.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What are the different modes available?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Smart Scroll offers three different modes:</p>
+                                    <ul>
+                                        <li><strong>Mute Mode:</strong> Volume knob scrolls when the system is muted</li>
+                                        <li><strong>Scroll Lock Mode:</strong> Volume knob scrolls when ScrollLock is ON</li>
+                                        <li><strong>Num Lock Mode:</strong> Volume knob scrolls when NumLock is OFF</li>
+                                    </ul>
+                                    <p>Each provides a different way to toggle between volume and scroll functionality.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Can I customize the scroll speed?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>This feature is planned for a future update. Currently, Smart Scroll uses your system's default scroll sensitivity. You can adjust your Windows mouse wheel settings to affect Smart Scroll's behavior.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What if I need to use the volume knob but I'm in scroll mode?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Simply toggle your chosen mode off to instantly revert to normal volume control:</p>
+                                    <ul>
+                                        <li>For Mute Mode: Unmute your system</li>
+                                        <li>For Scroll Lock Mode: Turn off Scroll Lock (usually by pressing the Scroll Lock key)</li>
+                                        <li>For Num Lock Mode: Turn on Num Lock (usually by pressing the Num Lock key)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div id="troubleshooting" class="faq-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="../../Releases/V-1.0.0/assets/mode.png" alt="Troubleshooting">
+                        </div>
+                        <h2 class="category-title">Troubleshooting</h2>
+                    </div>
+
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>I installed Smart Scroll but can't see it. Where is the application?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Smart Scroll runs silently in the background and is designed to stay out of your way. Check your system tray (notification area) in the taskbar - you'll find the Smart Scroll icon there. If you can't see it, you may need to click the "^" arrow in your taskbar to show hidden icons. You can also press <code>WIN + Shift + F2</code> to open the Smart Scroll settings window directly.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Smart Scroll isn't working with my application. What can I do?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>If Smart Scroll isn't working with a specific application, try these steps:</p>
+                                    <ol>
+                                        <li>Ensure the application accepts standard scroll wheel input</li>
+                                        <li>Make sure the application window is active (clicked/focused)</li>
+                                        <li>Verify that your chosen mode is active (system is muted, Scroll Lock is ON, or Num Lock is OFF)</li>
+                                        <li>Try restarting Smart Scroll or the application</li>
+                                    </ol>
+                                    <p>If issues persist, please report them on <a href="https://github.com/Aryan-Techie/SmartScroll/issues" target="_blank">GitHub Issues</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>The hotkeys aren't working. How can I fix this?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>If the hotkeys (WIN + Shift + F1 or WIN + Shift + F2) aren't working:</p>
+                                    <ol>
+                                        <li>Check if another application is using the same hotkeys</li>
+                                        <li>Ensure Smart Scroll is running (check system tray)</li>
+                                        <li>Try restarting Smart Scroll</li>
+                                        <li>If issues persist, you may need to check if your keyboard fully supports these key combinations</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Smart Scroll conflicts with another application. Can I fix this?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>If Smart Scroll conflicts with another application:</p>
+                                    <ol>
+                                        <li>Try switching to a different mode that doesn't interfere with the application</li>
+                                        <li>Temporarily exit Smart Scroll when using the conflicting application</li>
+                                        <li>Report the conflict on GitHub so we can improve compatibility</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compatibility Questions -->
+                <div id="compatibility" class="faq-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="../../Releases/V-1.0.0/assets/feather.png" alt="Compatibility">
+                        </div>
+                        <h2 class="category-title">Compatibility</h2>
+                    </div>
+
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Does this work with specific applications like Photoshop, Excel, or browsers?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Smart Scroll works with any application that accepts standard scroll wheel input. This includes most browsers, document editors, spreadsheets, design software, and much more.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Is Smart Scroll compatible with macOS or Linux?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Currently, Smart Scroll is only available for Windows. Support for other operating systems may be considered in future updates, but Windows-specific technologies are used in the current implementation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What Windows versions are supported?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Smart Scroll is fully compatible with Windows 10 and Windows 11. It may work on older versions of Windows, but these are not officially supported or tested.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Does Smart Scroll work with gaming keyboards and multimedia keyboards?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Yes! Smart Scroll works with any keyboard that has media volume controls, including gaming keyboards, multimedia keyboards, and specialized keyboards with dedicated volume knobs or dials.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Does Smart Scroll work with external volume control devices?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Smart Scroll works with any device that triggers standard Windows volume up/down events. This includes many external volume controllers, media controllers, and custom input devices that are recognized by Windows as media controls.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development & Contributing -->
+                <div id="development" class="faq-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="../../Releases/V-1.0.0/assets/gem.png" alt="Development">
+                        </div>
+                        <h2 class="category-title">Development & Contributing</h2>
+                    </div>
+
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How can I contribute to Smart Scroll?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>We welcome contributions! Here's how you can help:</p>
+                                    <ol>
+                                        <li>Report bugs or suggest features on <a href="https://github.com/Aryan-Techie/SmartScroll/issues" target="_blank">GitHub Issues</a></li>
+                                        <li>Fork the repository and submit pull requests</li>
+                                        <li>Help improve documentation</li>
+                                        <li>Share Smart Scroll with others who might find it useful</li>
+                                    </ol>
+                                    <p>Check our <a href="https://github.com/Aryan-Techie/SmartScroll/blob/main/CODE_OF_CONDUCT.md" target="_blank">Code of Conduct</a> before contributing.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What technologies are used to build Smart Scroll?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Smart Scroll is primarily built with AutoHotkey, a powerful scripting language for Windows automation. The GUI is created using AutoHotkey's built-in GUI capabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Are there plans for future features?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Yes! We have several features planned:</p>
+                                    <ul>
+                                        <li>Per-application behavior customization</li>
+                                        <li>Adjustable scroll speed and sensitivity</li>
+                                        <li>Scroll direction toggle</li>
+                                        <li>Advanced configuration options</li>
+                                        <li>Dark mode support for the interface</li>
+                                    </ul>
+                                    <p>See our <a href="https://github.com/Aryan-Techie/SmartScroll#-roadmap" target="_blank">roadmap</a> for more details.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Can I reuse Smart Scroll's code in my own project?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Yes! Smart Scroll is released under the MIT License, which allows you to use, modify, and distribute the code freely, as long as you include the original license and copyright notice. See the <a href="https://github.com/Aryan-Techie/SmartScroll/blob/main/LICENSE" target="_blank">license file</a> for full details.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top button -->
+    <div class="back-to-top" id="backToTop">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../assets/icons/png/icon-48x48.png" alt="Smart Scroll Logo">
+                    <span>Smart Scroll</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="../../index.html#features">Features</a>
+                        <a href="../../index.html#download">Download</a>
+                        <a href="../../index.html#documentation">Documentation</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="../pages/faq.html">FAQ</a>
+                        <a href="../../SECURITY.md">Security</a>
+                        <a href="../../CODE_OF_CONDUCT.md">Code of Conduct</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <a href="../../Readme.md">About Project</a>
+                        <a href="../../LICENCE">License</a>
+                        <a href="https://github.com/AROICE/SmartScroll" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2025</span> AROICE. Smart Scroll is released under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // FAQ Search functionality
+        const searchBox = document.getElementById('faqSearch');
+        const faqItems = document.querySelectorAll('.faq-item');
+        const faqCategories = document.querySelectorAll('.faq-category');
+        
+        searchBox.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            // Remove any existing no-results message
+            const existingNoResults = document.getElementById('noResultsMessage');
+            if (existingNoResults) {
+                existingNoResults.remove();
+            }
+            
+            // If search is empty, show all categories and reset items
+            if (searchTerm === '') {
+                faqCategories.forEach(category => {
+                    category.style.display = 'block';
+                });
+                
+                faqItems.forEach(item => {
+                    item.style.display = 'block';
+                    if (item.classList.contains('active')) {
+                        item.querySelector('.faq-question').click();
+                    }
+                });
+                return;
+            }
+            
+            // Hide all categories initially
+            faqCategories.forEach(category => {
+                category.style.display = 'none';
+            });
+            
+            // Filter items
+            let hasResults = false;
+            faqItems.forEach(item => {
+                const question = item.querySelector('h3').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    // Show this item's category
+                    item.closest('.faq-category').style.display = 'block';
+                    // Open the item if it's not already open
+                    if (!item.classList.contains('active')) {
+                        item.querySelector('.faq-question').click();
+                    }
+                    hasResults = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // If no results, show a message
+            if (!hasResults) {
+                // Create a message if it doesn't exist
+                const noResults = document.createElement('div');
+                noResults.id = 'noResultsMessage';
+                noResults.innerHTML = `
+                    <div style="text-align: center; padding: 30px; background: var(--gray-light); border-radius: var(--radius); margin: 20px 0;">
+                        <h3>No matching questions found</h3>
+                        <p>Try a different search term or <a href="#" id="clearSearch">clear the search</a>.</p>
+                    </div>
+                `;
+                
+                // Insert the no-results message before the first category
+                const faqPageContainer = document.querySelector('.faq-page-container');
+                const categoryNav = document.querySelector('.category-nav');
+                faqPageContainer.insertBefore(noResults, categoryNav.nextSibling);
+                
+                // Add clear search functionality
+                document.getElementById('clearSearch').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    searchBox.value = '';
+                    searchBox.dispatchEvent(new Event('input'));
+                });
+            }
+        });
+        
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
