@@ -3,298 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - Smart Scroll</title>
-    <meta name="description" content="The page you are looking for cannot be found.">
+    <title>Lost in Scrolling - Smart Scroll</title>
     <link rel="icon" href="assets/icons/png/icon-32x32.png" sizes="32x32">
-    <link rel="icon" href="assets/icons/png/icon-128x128.png" sizes="128x128">
-    <link rel="icon" href="assets/icons/png/icon-256x256.png" sizes="256x256">
-    <link rel="icon" href="assets/icons/png/icon-512x512.png" sizes="512x512">
-    <link rel="stylesheet" href="web/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        .error-page {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--white);
-            padding: 50px 20px;
+        :root {
+            --primary: #3A7BCA;
+            --accent: #2962FF;
+            --dark: #121212;
+            --light: #F5F7FA;
         }
         
-        .error-content {
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        .error-visual {
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: white;
+            cursor: none;
+        }
+        
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .container {
             position: relative;
-            height: 180px;
-            margin-bottom: 30px;
+            width: 100%;
+            height: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            z-index: 1;
         }
         
-        .error-numbers {
-            font-size: 9rem;
-            font-weight: 800;
-            line-height: 1;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-            opacity: 0.9;
-            letter-spacing: -5px;
-        }
-        
-        .scroll-icon {
+        .knob {
             position: absolute;
+            width: 120px;
+            height: 120px;
+            background: var(--primary);
+            border-radius: 60px;
+            box-shadow: 0 0 60px rgba(58, 123, 202, 0.5);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 70px;
-            height: 70px;
-            opacity: 0.1;
+            z-index: 2;
+            transition: transform 0.3s ease;
         }
         
-        .scroll-icon img {
+        .knob::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 60px;
+            background: white;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+        
+        .error-text {
+            position: absolute;
+            font-size: 25vw;
+            font-weight: 800;
+            opacity: 0.1;
+            z-index: 1;
+            color: var(--primary);
+            transform-origin: center;
+        }
+        
+        .circle-text {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .circle-text text {
+            fill: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .scroll-down {
+            position: fixed;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            overflow: hidden;
+            z-index: 0;
         }
         
         .scroll-line {
             position: absolute;
             width: 2px;
-            height: 100px;
-            background-color: var(--primary-color);
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0.5;
-            overflow: hidden;
+            height: 100%;
+            background: var(--primary);
+            opacity: 0.2;
         }
         
-        .scroll-line::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 30px;
-            background-color: white;
-            top: -30px;
-            left: 0;
-            animation: scrollDown 1.5s ease-in-out infinite;
+        .message {
+            position: relative;
+            margin-top: 260px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease 1s forwards;
+            z-index: 10;
         }
         
-        @keyframes scrollDown {
-            0% {
-                top: -30px;
-            }
-            100% {
-                top: 100%;
-            }
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
         
-        .error-title {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--text-color);
-            font-weight: 700;
-        }
-        
-        .error-description {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        
-        .home-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
+        .home-link {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
             color: white;
-            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
+            padding: 12px 25px;
+            background: var(--primary);
+            border-radius: 30px;
+            z-index: 10;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(58, 123, 202, 0.2);
-            margin-bottom: 50px;
         }
         
-        .home-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(58, 123, 202, 0.25);
-            color: white;
+        .home-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(41, 98, 255, 0.3);
         }
         
-        .links-minimal {
+        .custom-cursor {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.3s, height 0.3s, background 0.3s;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 25px;
-            margin-top: 20px;
         }
         
-        .link-minimal {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .link-minimal::after {
+        .custom-cursor::after {
             content: '';
+            width: 5px;
+            height: 5px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .custom-cursor.active {
+            width: 65px;
+            height: 65px;
+            background: rgba(58, 123, 202, 0.2);
+        }
+        
+        .magnetic-area {
             position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--primary-color);
-            transition: all 0.3s ease;
-        }
-        
-        .link-minimal:hover {
-            color: var(--primary-color);
-        }
-        
-        .link-minimal:hover::after {
-            width: 100%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
         }
         
         @media (max-width: 768px) {
-            .error-numbers {
-                font-size: 7rem;
+            .circle-text {
+                width: 300px;
+                height: 300px;
             }
             
-            .error-title {
-                font-size: 1.8rem;
+            .knob {
+                width: 90px;
+                height: 90px;
             }
             
-            .error-description {
-                font-size: 1rem;
+            .knob::after {
+                height: 45px;
+                width: 12px;
+                top: 8px;
             }
             
-            .links-minimal {
-                flex-wrap: wrap;
-                gap: 15px 30px;
+            .message {
+                margin-top: 200px;
+                font-size: 1.2rem;
+                max-width: 280px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <img src="assets/icons/png/icon-48x48.png" alt="Smart Scroll Logo">
-                    <span>Smart Scroll</span>
-                </a>
-                <div class="nav-links">
-                    <a href="index.html#features" class="nav-link">Features</a>
-                    <a href="index.html#how-it-works" class="nav-link">How It Works</a>
-                    <a href="index.html#about" class="nav-link">Origin</a>
-                    <a href="index.html#documentation" class="nav-link">Documentation</a>
-                    <a href="index.html#support" class="nav-link">Support</a>
-                    <a href="index.html#faq" class="nav-link">FAQ</a>
-                </div>
-                <a href="index.html#download" class="btn btn-primary nav-cta">Download</a>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- 404 Error Section -->
-    <section class="error-page">
-        <div class="container">
-            <div class="error-content">
-                <div class="error-visual">
-                    <div class="error-numbers">404</div>
-                    <div class="scroll-icon">
-                        <img src="Releases/V-1.0.0/assets/key.png" alt="Volume knob icon">
-                    </div>
-                    <div class="scroll-line"></div>
-                </div>
-                
-                <h1 class="error-title">Page Not Found</h1>
-                <p class="error-description">Looks like you've scrolled too far. This page doesn't exist.</p>
-                
-                <a href="index.html" class="home-button">Back to Home</a>
-                
-                <div class="links-minimal">
-                    <a href="index.html#features" class="link-minimal">Features</a>
-                    <a href="index.html#download" class="link-minimal">Download</a>
-                    <a href="web/pages/faq/" class="link-minimal">FAQ</a>
-                    <a href="https://github.com/Aryan-Techie/SmartScroll" class="link-minimal">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="assets/icons/png/icon-48x48.png" alt="Smart Scroll Logo">
-                    <span>Smart Scroll</span>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Product</h4>
-                        <a href="index.html#features">Features</a>
-                        <a href="index.html#download">Download</a>
-                        <a href="index.html#documentation">Documentation</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Resources</h4>
-                        <a href="web/pages/faq/index.html">FAQ</a>
-                        <a href="SECURITY.md">Security</a>
-                        <a href="CODE_OF_CONDUCT.md">Code of Conduct</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>About</h4>
-                        <a href="Readme.md">About Project</a>
-                        <a href="LICENCE">License</a>
-                        <a href="https://github.com/AROICE/SmartScroll" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="product-hunt-badge">
-                    <a href="https://www.producthunt.com/posts/smart-scroll?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-smart&#0045;scroll" target="_blank">
-                        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=958085&theme=light&t=1745767801777" alt="Smart&#0032;Scroll - Transform&#0032;your&#0032;volume&#0032;knob&#0032;into&#0032;a&#0032;scroll&#0032;wheel | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 AROICE. Smart Scroll is released under the MIT License.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="web/js/script.js"></script>
+    <div class="noise"></div>
+    
+    <div class="scroll-down" id="scrollLines"></div>
+    
+    <div class="container">
+        <div class="error-text">404</div>
+        
+        <svg class="circle-text" viewBox="0 0 100 100">
+            <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+            <text>
+                <textPath href="#circle">
+                    PAGE NOT FOUND • SCROLL TOO FAR • PAGE NOT FOUND • SCROLL TOO FAR • 
+                </textPath>
+            </text>
+        </svg>
+        
+        <div class="magnetic-area" id="magneticArea"></div>
+        <div class="knob" id="knob"></div>
+        
+        <div class="message">You've turned the knob too far.<br>This page doesn't exist.</div>
+    </div>
+    
+    <a href="index.html" class="home-link">Back to reality</a>
+    
+    <div class="custom-cursor" id="cursor"></div>
+    
     <script>
-        // Handle mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
+            // Custom cursor
+            const cursor = document.getElementById('cursor');
+            const links = document.querySelectorAll('a');
             
-            if (menuToggle) {
-                menuToggle.addEventListener('click', function() {
-                    menuToggle.classList.toggle('active');
-                    navLinks.classList.toggle('active');
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    cursor.classList.add('active');
+                });
+                
+                link.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('active');
+                });
+            });
+            
+            // Create scrolling lines
+            const scrollLines = document.getElementById('scrollLines');
+            for (let i = 0; i < 20; i++) {
+                const line = document.createElement('div');
+                line.className = 'scroll-line';
+                line.style.left = Math.random() * 100 + '%';
+                line.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                line.style.animationDelay = (Math.random() * 2) + 's';
+                scrollLines.appendChild(line);
+            });
+            
+            // Magnetic effect for knob
+            const knob = document.getElementById('knob');
+            const magneticArea = document.getElementById('magneticArea');
+            let knobAngle = 0;
+            let isInMagneticArea = false;
+            
+            magneticArea.addEventListener('mousemove', (e) => {
+                isInMagneticArea = true;
+                
+                const rect = magneticArea.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const deltaX = e.clientX - centerX;
+                const deltaY = e.clientY - centerY;
+                
+                const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                const maxDistance = rect.width / 2;
+                
+                if (distance < maxDistance) {
+                    const normDist = distance / maxDistance;
+                    const scale = 1 - normDist * 0.3;
+                    
+                    knobAngle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
+                    
+                    knob.style.transform = `translate(calc(-50% + ${deltaX * 0.1}px), calc(-50% + ${deltaY * 0.1}px)) rotate(${knobAngle}deg) scale(${scale})`;
+                }
+            });
+            
+            magneticArea.addEventListener('mouseleave', () => {
+                isInMagneticArea = false;
+                knob.style.transform = 'translate(-50%, -50%) rotate(0deg) scale(1)';
+            });
+            
+            // On smaller screens, add touch support
+            if (window.innerWidth <= 768) {
+                document.body.style.cursor = 'auto';
+                cursor.style.display = 'none';
+                
+                let touchStartX, touchStartY;
+                
+                document.addEventListener('touchstart', (e) => {
+                    const touch = e.touches[0];
+                    touchStartX = touch.clientX;
+                    touchStartY = touch.clientY;
+                });
+                
+                document.addEventListener('touchmove', (e) => {
+                    const touch = e.touches[0];
+                    const deltaX = touch.clientX - touchStartX;
+                    const deltaY = touch.clientY - touchStartY;
+                    
+                    const knobAngle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
+                    knob.style.transform = `translate(-50%, -50%) rotate(${knobAngle}deg)`;
+                });
+                
+                document.addEventListener('touchend', () => {
+                    knob.style.transform = 'translate(-50%, -50%) rotate(0deg)';
                 });
             }
+            
+            // Add scrolling animation to vertical lines
+            const lines = document.querySelectorAll('.scroll-line');
+            lines.forEach(line => {
+                const duration = Math.random() * 2 + 2;
+                const delay = Math.random() * 2;
+                
+                line.style.animation = `scrollDown ${duration}s linear ${delay}s infinite`;
+            });
+            
+            // Create scrolling animation
+            function scrollDown() {
+                return `
+                    @keyframes scrollDown {
+                        0% {
+                            transform: translateY(-100%);
+                        }
+                        100% {
+                            transform: translateY(100vh);
+                        }
+                    }
+                `;
+            }
+            
+            // Add keyframes to document
+            const style = document.createElement('style');
+            style.textContent = scrollDown();
+            document.head.appendChild(style);
         });
     </script>
 </body>
