@@ -162,6 +162,11 @@ Steps to contribute:
 - [ ] Scroll direction toggle
 - [ ] Config file for advanced settings
 - [ ] Dark mode support
+- [ ] ...
+- [ ] ...
+- [ ] ...
+
+(Feel free to Suggest more features at [New Features Request Section](https://github.com/Aryan-Techie/SmartScroll/issues/new?template=feature_request.md). )
 
 ---
 

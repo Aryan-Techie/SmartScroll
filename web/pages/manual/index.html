@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Scroll Manual - Complete User Guide</title>
+    <meta name="description" content="Comprehensive user manual for Smart Scroll - Learn how to transform your volume knob into a scroll wheel with detailed instructions and tips.">
+    <link rel="icon" href="../../../assets/icons/png/icon-32x32.png" sizes="32x32">
+    <link rel="icon" href="../../../assets/icons/png/icon-128x128.png" sizes="128x128">
+    <link rel="icon" href="../../../assets/icons/png/icon-256x256.png" sizes="256x256">
+    <link rel="icon" href="../../../assets/icons/png/icon-512x512.png" sizes="512x512">
+    <link rel="stylesheet" href="../../../web/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../../../index.html" class="logo">
+                    <img src="../../../assets/icons/png/icon-48x48.png" alt="Smart Scroll Logo">
+                    <span>Smart Scroll</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../../../index.html#features" class="nav-link">Features</a>
+                    <a href="../../../index.html#how-it-works" class="nav-link">How It Works</a>
+                    <a href="../../../index.html#about" class="nav-link">Origin</a>
+                    <a href="../../../index.html#documentation" class="nav-link">Documentation</a>
+                    <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+                </div>
+                <a href="../../../index.html#download" class="btn btn-primary nav-cta">Download</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Manual Hero Section -->
+    <section class="hero" style="padding-bottom: 40px;">
+        <div class="container">
+            <div class="hero-content" style="max-width: 100%; text-align: center;">
+                <h1>Smart Scroll User Manual</h1>
+                <p class="hero-subtitle">Everything you need to know about using Smart Scroll to its fullest potential</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container with Sidebar and Content -->
+    <div class="main-container">
+        <!-- Enhanced sidebar with accessibility improvements -->
+        <aside class="manual-sidebar" id="manualSidebar" aria-label="Documentation navigation">
+            <div class="docs-nav">
+                <div class="docs-nav-header">
+                    <h2 class="docs-nav-title">
+                        <img src="../../../assets/icons/png/icon-32x32.png" alt="">
+                        <span style="color: #f7f9fb;">Smart Scroll Manual</span>
+                    </h2>
+                    <p class="docs-nav-subtitle" align="center">User guide & reference</p>
+                    <!-- Pin sidebar button - updated to use pin.png -->
+                    <button type="button" class="pin-sidebar" id="pinSidebar" aria-label="Pin sidebar" title="Pin sidebar">
+                        <img src="../../../Releases/V-1.0.0/assets/pin.png" alt="Pin icon">
+                    </button>
+                </div>
+                <div class="docs-nav-content">
+                    <!-- Section 1: Introduction (Direct link) -->
+                    <div class="nav-section">
+                        <a href="#introduction" class="nav-direct-link" data-section="introduction">1. Introduction</a>
+                    </div>
+
+                    <!-- Section 2: Installation -->
+                    <div class="nav-section">
+                        <button type="button" class="nav-section-button" aria-expanded="true" aria-controls="section-installation">
+                            2. Installation
+                        </button>
+                        <ul id="section-installation" class="nav-list" role="list">
+                            <li><a href="#system-requirements" class="nav-link" data-section="system-requirements">2.1 System Requirements</a></li>
+                            <li><a href="#download-install" class="nav-link" data-section="download-install">2.2 Download and Installation</a></li>
+                            <li><a href="#first-launch" class="nav-link" data-section="first-launch">2.3 First Launch</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 3: Getting Started -->
+                    <div class="nav-section">
+                        <button type="button" class="nav-section-button" aria-expanded="true" aria-controls="section-getting-started">
+                            3. Getting Started
+                        </button>
+                        <ul id="section-getting-started" class="nav-list" role="list">
+                            <li><a href="#basic-concepts" class="nav-link" data-section="basic-concepts">3.1 Basic Concepts</a></li>
+                            <li><a href="#interface-overview" class="nav-link" data-section="interface-overview">3.2 Interface Overview</a></li>
+                            <li><a href="#tray-icon" class="nav-link" data-section="tray-icon">3.3 System Tray Icon</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 4: Smart Scroll Modes -->
+                    <div class="nav-section">
+                        <button type="button" class="nav-section-button" aria-expanded="true" aria-controls="section-modes">
+                            4. Smart Scroll Modes
+                        </button>
+                        <ul id="section-modes" class="nav-list" role="list">
+                            <li><a href="#mute-mode" class="nav-link" data-section="mute-mode">4.1 Mute Mode</a></li>
+                            <li><a href="#scroll-lock-mode" class="nav-link" data-section="scroll-lock-mode">4.2 Scroll Lock Mode</a></li>
+                            <li><a href="#num-lock-mode" class="nav-link" data-section="num-lock-mode">4.3 Num Lock Mode</a></li>
+                            <li><a href="#mode-comparison" class="nav-link" data-section="mode-comparison">4.4 Mode Comparison</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 5: Customization -->
+                    <div class="nav-section">
+                        <button type="button" class="nav-section-button" aria-expanded="true" aria-controls="section-customization">
+                            5. Customization
+                        </button>
+                        <ul id="section-customization" class="nav-list" role="list">
+                            <li><a href="#scroll-speed" class="nav-link" data-section="scroll-speed">5.1 Adjusting Scroll Speed</a></li>
+                            <li><a href="#hotkeys" class="nav-link" data-section="hotkeys">5.2 Configuring Hotkeys</a></li>
+                            <li><a href="#startup" class="nav-link" data-section="startup">5.3 Launch at Startup</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 6: Advanced Features -->
+                    <div class="nav-section">
+                        <button type="button" class="nav-section-button" aria-expanded="true" aria-controls="section-advanced">
+                            6. Advanced Features
+                        </button>
+                        <ul id="section-advanced" class="nav-list" role="list">
+                            <li><a href="#app-specific" class="nav-link" data-section="app-specific">6.1 Application-Specific Settings</a></li>
+                            <li><a href="#profiles" class="nav-link" data-section="profiles">6.2 User Profiles</a></li>
+                            <li><a href="#script-customization" class="nav-link" data-section="script-customization">6.3 Script Customization</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 7: Troubleshooting -->
+                    <div class="nav-section">
+                        <button type="button" class="nav-section-button" aria-expanded="true" aria-controls="section-troubleshooting">
+                            7. Troubleshooting
+                        </button>
+                        <ul id="section-troubleshooting" class="nav-list" role="list">
+                            <li><a href="#common-issues" class="nav-link" data-section="common-issues">7.1 Common Issues</a></li>
+                            <li><a href="#compatibility" class="nav-link" data-section="compatibility">7.2 Compatibility Problems</a></li>
+                            <li><a href="#logs" class="nav-link" data-section="logs">7.3 Logs and Diagnostics</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 8: FAQ (Direct link) -->
+                    <div class="nav-section">
+                        <a href="#faq" class="nav-direct-link" data-section="faq">8. Frequently Asked Questions</a>
+                    </div>
+
+                    <!-- Section 9: Support (Direct link) -->
+                    <div class="nav-section">
+                        <a href="#support" class="nav-direct-link" data-section="support">9. Support and Contact</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Manual Content -->
+        <div class="manual-content">
+            <!-- Introduction Section -->
+            <div class="manual-section" id="introduction">
+                <h2>1. Introduction</h2>
+                <p>
+                    Welcome to the Smart Scroll User Manual. <br>This comprehensive guide will help you make the most of this innovative utility that transforms your keyboard's volume knob into a versatile scroll wheel, providing a more intuitive and comfortable scrolling experience.
+                </p>
+                <p>
+                    Smart Scroll is designed with productivity and user experience in mind, allowing you to seamlessly switch between volume control and scrolling functionality without additional hardware. 
+                </p>
+                <p>
+                    Whether you're a developer navigating through large codebases, a writer working with extensive documents, or simply someone who values efficient navigation, Smart Scroll enhances your workflow by repurposing an underutilized control.
+                </p>
+                <div class="note-box">
+                    <p><strong>Note:</strong> This manual covers Smart Scroll version 1.0.0 and may be updated as new versions are released. Please check the <a href="https://github.com/Aryan-Techie/SmartScroll" target="_blank">GitHub repository</a> for the latest information.</p>
+                </div>
+            </div>
+
+            <!-- Installation Section -->
+            <div class="manual-section" id="installation">
+                <h2>2. Installation</h2>
+                
+                <h3 id="system-requirements">2.1 System Requirements</h3>
+                <p>Before installing Smart Scroll, make sure your system meets the following requirements:</p>
+                <ul>
+                    <li><strong>Operating System:</strong> Windows 10 or Windows 11</li>
+                    <li><strong>Hardware:</strong> Keyboard or device with media volume control knob</li>
+                    <li><strong>Disk Space:</strong> Minimal (less than 5MB)</li>
+                    <li><strong>Memory:</strong> Minimal (typically uses less than 10MB RAM)</li>
+                    <li><strong>Permissions:</strong> Administrator rights (for initial installation only)</li>
+                </ul>
+                
+                <h3 id="download-install">2.2 Download and Installation</h3>
+                <p>To install Smart Scroll, follow these simple steps:</p>
+                <ol class="step-list">
+                    <li>Visit the <a href="https://github.com/Aryan-Techie/SmartScroll/releases" target="_blank">Smart Scroll releases page</a> on GitHub.</li>
+                    <li>Download the latest version (.exe file)</li>
+                    <li>Run the Downloaded .exe file</li>
+                    <li>After install you can find the application in Windows Taskbar Tray Section.</li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> For easier access, you can create a shortcut to SmartScroll.exe on your desktop.</p>
+                </div>
+                
+                <h3 id="first-launch">2.3 First Launch</h3>
+                <p>When you launch Smart Scroll for the first time:</p>
+                <ol>
+                    <li>A Windows security prompt may appear asking for permission to run the application. Click "Yes" to continue.</li>
+                    <li>Smart Scroll will start running in the background, and its icon will appear in the system tray (notification area).</li>
+                    <li>The application will default to "Mute Mode" - this means your volume controls will function normally until you press the Mute button, which activates scrolling mode.</li>
+                    <li>A welcome notification will appear with basic instructions to get started.</li>
+                </ol>
+                <div class="warning-box">
+                    <p><strong>Important:</strong> Smart Scroll needs to intercept keyboard input to function properly. Some antivirus programs might flag this behavior. If your antivirus blocks Smart Scroll, add it to the exceptions list.</p>
+                </div>
+            </div>
+
+            <!-- Getting Started Section -->
+            <div class="manual-section" id="getting-started">
+                <h2 id="read-guide">3. Getting Started</h2>
+                
+                <h3 id="basic-concepts">3.1 Basic Concepts</h3>
+                <p>Smart Scroll operates on a simple principle: temporarily repurposing your volume controls to enable scrolling when needed. Here are the key concepts to understand:</p>
+                
+                <ul>
+                    <li><strong>Toggle-based operation:</strong> Smart Scroll uses various toggle mechanisms (Mute button, Scroll Lock, or Num Lock) to switch between normal volume control and scrolling mode.</li>
+                    <li><strong>Modes:</strong> The application offers three different operating modes, each using a different toggle mechanism to switch between volume and scrolling functionality.</li>
+                    <li><strong>System tray integration:</strong> Smart Scroll runs quietly in the background, accessible from the system tray icon for configuration and mode switching.</li>
+                    <li><strong>Hotkeys:</strong> Keyboard shortcuts allow you to quickly switch modes, or access other features without using the system tray menu.</li>
+                </ul>
+                
+                <h3 id="interface-overview">3.2 Interface Overview</h3>
+                <p>Smart Scroll features a minimalist design with most interactions happening through:</p>
+                
+                <ul>
+                    <li><strong>Notifications:</strong> Brief on-screen notifications inform you when modes change or important events occur.</li>
+                    <li><strong>Keyboard indicators:</strong> Depending on the mode, your keyboard's Num Lock or Scroll Lock indicators may be used to show when scrolling is active.</li>
+                </ul>
+                
+                <h3 id="tray-icon">3.3 System Tray Icon</h3>
+                <p>The system tray icon is your main interface for interacting with Smart Scroll:</p>
+                
+                <ul>
+                    <li><strong>Left-click:</strong> Opens the control center of application.</li>
+                    <li><strong>Right-click:</strong> Opens the context menu with the following options:
+                        <li></li>
+                        <ul>
+                            <li><strong>Suspend Hotkeys:</strong> Disables the application hotekeys while keeping the program still running in background.</li>
+                            <li><strong>Open:</strong> Configure application behavior, hotkeys, and scroll speed.</li>
+                            <li><strong>Pause:</strong> Pause the Application, with just showing app in tray to resume it.</li>
+                            <li><strong>Exit:</strong> Close Smart Scroll completely.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <!-- <div class="tip-box">
+                    <p><strong>Tip:</strong> Hover over the system tray icon to see a tooltip displaying the current mode and status (active/inactive).</p>
+                </div> -->
+            </div>
+
+            <!-- Smart Scroll Modes Section -->
+            <div class="manual-section" id="modes">
+                <h2>4. Smart Scroll Modes</h2>
+                <p>Smart Scroll offers three distinct modes of operation, each with its own advantages. You can switch between these modes at any time through the Application interface or using the default hotkey <span class="key-combo"><span class="key">Win</span><span class="key">Shift</span><span class="key">F1</span></span>.</p>
+                
+                <h3 id="mute-mode">4.1 Mute Mode</h3>
+                <p>Mute Mode is the default setting when you first install Smart Scroll. In this mode:</p>
+                <ul>
+                    <li>Your volume controls function normally by default.</li>
+                    <li>When you press the Mute button once (basically when you press your volume knob, it turns up mute mode, stating the application to start scrolling mode), and it switches to scroll mode.</li>
+                    <li>While in scroll mode, volume up/down will scroll up/down instead of changing volume.</li>
+                    <li>Press Mute again to switch back to volume control.</li>
+                </ul>
+                <p><strong>Best for:</strong> Users who only occasionally need scrolling functionality and primarily use volume controls for their default purpose.</p>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> In Mute Mode, audio will be actually be muted when you activate scroll mode. Best for people who don't prefer working on without listening to music. The mute button is simply used as a toggle between modes.</p>
+                </div>
+                
+                <h3 id="scroll-lock-mode">4.2 Scroll Lock Mode</h3>
+                <p>Scroll Lock Mode uses your keyboard's Scroll Lock key as the toggle mechanism:</p>
+                <ul>
+                    <li>When Scroll Lock is OFF, volume controls function normally.</li>
+                    <li>When Scroll Lock is ON (keyboard indicator lit), volume controls become scroll controls.</li>
+                    <li>The keyboard's Scroll Lock indicator provides visual feedback about the current mode.</li>
+                </ul>
+                <p><strong>Best for:</strong> Users who want clear visual feedback and have a keyboard with a visible Scroll Lock indicator.</p>
+                <div class="note-box">
+                    <p><strong>Note:</strong> Some compact keyboards may not have a dedicated Scroll Lock key or indicator. In this case, you can use the virtual Scroll Lock key through the on-screen keyboard or via the <span class="key-combo"><span class="key">Fn</span></span> key combinations specific to your keyboard.</p>
+                </div>
+                
+                <h3 id="num-lock-mode">4.3 Num Lock Mode</h3>
+                <p>Num Lock Mode uses your keyboard's Num Lock status as the toggle mechanism:</p>
+                <ul>
+                    <li>When Num Lock is ON (default for most users), volume controls function normally.</li>
+                    <li>When Num Lock is OFF, volume controls become scroll controls.</li>
+                    <li>The keyboard's Num Lock indicator shows which mode is currently active.</li>
+                </ul>
+                <p><strong>Best for:</strong> Users who rarely use the number pad with Num Lock off, or who want to maintain volume functionality most of the time.</p>
+                <div class="warning-box">
+                    <p><strong>Warning:</strong> Using Num Lock Mode will affect your number pad functionality. When scrolling is active (Num Lock OFF), your numpad will output arrow and navigation keys instead of numbers.</p>
+                </div>
+                
+                <h3 id="mode-comparison">4.4 Mode Comparison</h3>
+                <p>Here's a comparison of the three modes to help you decide which one is best for your workflow:</p>
+                
+                <table class="mode-comparison">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Mute Mode</th>
+                            <th>Scroll Lock Mode</th>
+                            <th>Num Lock Mode</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Toggle Mechanism</td>
+                            <td>Mute button</td>
+                            <td>Scroll Lock key</td>
+                            <td>Num Lock key</td>
+                        </tr>
+                        <tr>
+                            <td>Visual Indicator</td>
+                            <td>Mute LED*</td>
+                            <td>Scroll Lock LED*</td>
+                            <td>Num Lock LED*</td>
+                        </tr>
+                        <tr>
+                            <td>Default State</td>
+                            <td>Volume control</td>
+                            <td>Volume control (Scroll Lock OFF)</td>
+                            <td>Volume control (Num Lock ON)</td>
+                        </tr>
+                        <tr>
+                            <td>Side Effects</td>
+                            <td>None</td>
+                            <td>None</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td>Best For</td>
+                            <td>Occasional scrolling needs</td>
+                            <td>Dedicated scrolling sessions</td>
+                            <td>Users Having a dedicated NumLock Key</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="warning-box">
+                    <p><strong>* Note:</strong> LED light will only lit up if your system has one.</p>
+                </div>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> You can experiment with all three modes to find which one fits your workflow best. Your mode preference is automatically saved.</p>
+                </div>
+            </div>
+
+            <!-- Customization Section -->
+            <div class="manual-section" id="customization">
+                <h2>5. Customization</h2>
+                
+                <h3 id="scroll-speed">5.1 Adjusting Scroll Speed</h3>
+                
+                <div class="error-box">
+                    <p><strong>Notice:</strong> Feature is still in development process, will be released in future updates.</p>
+                </div>
+                
+                <p>Smart Scroll allows you to customize how many lines of text are scrolled with each volume up/down action:</p>
+                <ol class="step-list">
+                    <li>Right-click the Smart Scroll tray icon.</li>
+                    <li>Select "Settings" from the context menu.</li>
+                    <li>In the Settings window, locate the "Scroll Speed" section.</li>
+                    <li>Use the slider to adjust the number of lines scrolled per volume control action:
+                        <ul>
+                            <li>Lower values (1-3): Precise scrolling for reading text</li>
+                            <li>Medium values (4-8): General browsing and document navigation</li>
+                            <li>Higher values (9+): Fast scrolling for long documents</li>
+                        </ul>
+                    </li>
+                    <li>Click "Apply" or "OK" to save your changes.</li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> You can set different scroll speeds for different applications through the "Application-Specific Settings" menu.</p>
+                </div>
+                <h3 id="hotkeys">5.2 Configuring Hotkeys</h3>
+
+    
+                <div class="error-box">
+                    <p><strong>Notice:</strong> Setting Custom Hotkeys feature is still under development and will be released in future updates. However, preset keys are already available.</p>
+                </div>
+                
+
+                <p>Smart Scroll comes with default hotkeys that you can customize:</p>
+                <ol class="step-list">
+                    <li>Right-click the Smart Scroll tray icon and select "Settings."</li>
+                    <li>Navigate to the "Hotkeys" tab.</li>
+                    <li>You'll see a list of actions with their associated key combinations:
+                        <ul>
+                            <br>
+                            <li><strong>Switch Mode:</strong> Default is <span class="key-combo"><span class="key">Win</span><span class="key">Shift</span><span class="key">F1</span></span></li>
+                            <li><strong>Open Settings:</strong> Default is <span class="key-combo"><span class="key">Win</span><span class="key">Shift</span><span class="key">F2</span></span></li>
+                            
+                        </ul>
+                    </li>
+                    <li>To change a hotkey, click on the action and press the new key combination you want to assign.</li>
+                    <li>Click "Apply" or "OK" to save your changes.</li>
+                </ol>
+                <div class="warning-box">
+                    <p><strong>Warning:</strong> Avoid using hotkeys that are already assigned by Windows or other applications to prevent conflicts.</p>
+                </div>
+                
+                <h3 id="startup">5.3 Launch at Startup</h3>
+                <p>To have Smart Scroll automatically start when you log into Windows:</p>
+                <ol class="step-list">
+                    <li>Right-click the Smart Scroll tray icon and select "Settings."</li>
+                    <li>In the "Settings" tab, under "Startup" Section check the box labeled "Launch Smart Scroll when Windows starts. & better to also check "Start minimized in system tray" (if not already checked).</li>
+                    <li>Click "Save" to save your settings.</li>
+                </ol>
+                <p>Alternatively, you can manually add Smart Scroll to startup:</p>
+                <ol class="step-list">
+                    <li>Press <span class="key-combo"><span class="key">Win</span><span class="key">R</span></span> to open the Run dialog.</li>
+                    <li>Type <code>shell:startup</code> and press Enter to open the Startup folder.</li>
+                    <li>Create a shortcut to SmartScroll.exe in this folder.</li>
+                </ol>
+                <div class="note-box">
+                    <p><strong>Note:</strong> Further, you can check the Startup Apps section in Windows Task Manager to see whether SmartScroll.exe is listed there. You can also toggle it on or off from there.</p>
+                </div>
+            </div>
+
+            <!-- Advanced Features Section -->
+            <div class="manual-section" id="advanced">
+                <h2>6. Advanced Features</h2>
+                
+
+                <div class="error-box">
+                    <p><strong>Notice:</strong> Feature is still in development process, will be released in future updates.</p>
+                </div>
+
+
+
+                <h3 id="app-specific">6.1 Application-Specific Settings</h3>
+                <p>Smart Scroll allows you to create different settings profiles for specific applications:</p>
+                <ol class="step-list">
+                    <li>Right-click the Smart Scroll tray icon and select "Settings."</li>
+                    <li>Navigate to the "Application Settings" tab.</li>
+                    <li>Click "Add" to create a new application-specific profile.</li>
+                    <li>Either select an application from the list of running applications or browse to an executable file.</li>
+                    <li>Configure settings specific to this application:
+                        <ul>
+                            <li>Scroll speed</li>
+                            <li>Preferred mode</li>
+                            <li>Special behavior (e.g., always use scroll mode, never use scroll mode)</li>
+                        </ul>
+                    </li>
+                    <li>Click "Save" to add this application profile.</li>
+                </ol>
+                <p>When the specified application gains focus, Smart Scroll will automatically apply the corresponding settings.</p>
+                
+                <h3 id="profiles">6.2 User Profiles</h3>
+
+                <div class="error-box">
+                    <p><strong>Notice:</strong> Feature is still in development process, will be released in future updates.</p>
+                </div>
+
+
+                <p>For shared computers or different usage scenarios, you can create and switch between multiple user profiles:</p>
+                <ol class="step-list">
+                    <li>Right-click the Smart Scroll tray icon and select "Settings."</li>
+                    <li>Navigate to the "Profiles" tab.</li>
+                    <li>Click "New Profile" to create a new settings profile.</li>
+                    <li>Give the profile a name (e.g., "Work," "Gaming," "Presentation").</li>
+                    <li>Configure all settings for this profile.</li>
+                    <li>Click "Save Profile" to store it.</li>
+                </ol>
+                <p>To switch between profiles:</p>
+                <ol class="step-list">
+                    <li>Right-click the Smart Scroll tray icon.</li>
+                    <li>Hover over "Profiles" in the context menu.</li>
+                    <li>Select the profile you want to activate.</li>
+                </ol>
+                
+                <h3 id="script-customization">6.3 Script Customization</h3>
+                <p>Advanced users can customize Smart Scroll's behavior by editing the script file:</p>
+                <ol class="step-list">
+                    <li>Get the SmartScroll.ahk file in github repository / release page.</li>
+                    <li>Make a backup copy of the original file before making any changes.</li>
+                    <li>Open the file with a text editor like Notepad++ or Visual Studio Code.</li>
+                    <li>Modify the script according to your needs.</li>
+                    <li>If you have AutoHotkey installed, you can compile the modified script into a new executable.</li>
+                </ol>
+                <div class="code-block">
+                    <pre>; Example: Modify scroll speed variables
+                    global ScrollLinesPerStep := 3      ; Default scroll speed
+                    global FastScrollThreshold := 10    ; Fast scroll threshold
+                    global FastScrollMultiplier := 3    ; Fast scroll multiplier</pre>
+                </div>
+                <div class="error-box">
+                    <p><strong>Warning:</strong> Script customization is for advanced users only. <br> Incorrect modifications may cause the application to malfunction. Proceed with caution.</p>
+                </div>
+            </div>
+
+            <!-- Troubleshooting Section -->
+            <div class="manual-section" id="troubleshooting">
+                <h2>7. Troubleshooting</h2>
+                
+                <h3 id="common-issues">7.1 Common Issues</h3>
+                <h4>Smart Scroll is not responding to volume controls</h4>
+                <ol class="step-list">
+                    <li>Check if Smart Scroll is running (look for the icon in the system tray).</li>
+                    <li>Verify that you're in the correct mode and have activated scrolling mode.</li>
+                    <li>Ensure your volume controls are working properly by testing them in volume mode.</li>
+                    <li>Try restarting Smart Scroll by right-clicking the tray icon and selecting "Exit," then launching the application again.</li>
+                </ol>
+                
+                <!-- <h4>Scrolling is too fast or too slow</h4>
+                <ol class="step-list">
+                    <li>Adjust the scroll speed in Settings as described in section 5.1.</li>
+                    <li>If scrolling speed changes dramatically between applications, consider creating application-specific settings.</li>
+                </ol> -->
+                
+                <!-- <h4>Smart Scroll conflicts with other applications</h4>
+                <ol class="step-list">
+                    <li>Identify the conflicting application.</li>
+                    <li>In Smart Scroll settings, go to "Application Settings" and add the conflicting application.</li>
+                    <li>Set it to "Disable Smart Scroll when this application has focus."</li>
+                </ol> -->
+                
+                <h3 id="compatibility">7.2 Compatibility Problems</h3>
+                <h4>Compatibility with security software</h4>
+                <p>Some antivirus or security software may block Smart Scroll because it monitors keyboard input:</p>
+                <ol class="step-list">
+                    <li>Add SmartScroll.exe to your antivirus exclusions or allowed programs list.</li>
+                    <li>If necessary, temporarily disable your security software to test if it's causing the issue.</li>
+                    <li>Run Smart Scroll as administrator for full access to input monitoring. Even works perfectly even without any admin privileges.</li>
+                </ol>
+                
+                <h4>Application-specific compatibility</h4>
+                
+                <div class="error-box">
+                    <p><strong>Note:</strong> No Fix for this issue as of now. This feature will be there in future releases.</p>
+                </div>
+
+
+                <p>Some applications may handle scrolling in non-standard ways:</p>
+                <ol class="step-list">
+                    <li>For applications that don't scroll properly, try adjusting the "Scroll Method" in Smart Scroll's application-specific settings.</li>
+                    <li>Options include "Standard Scroll," "Wheel Emulation," and "Arrow Key Emulation."</li>
+                    <li>Test each method to see which works best with your problematic application.</li>
+                </ol>
+<!--                 
+                <h3 id="logs">7.3 Logs and Diagnostics</h3>
+                <p>For persistent issues, Smart Scroll provides diagnostic logging:</p>
+                <ol class="step-list">
+                    <li>Right-click the Smart Scroll tray icon and select "Settings."</li>
+                    <li>Go to the "Advanced" tab.</li>
+                    <li>Check "Enable diagnostic logging."</li>
+                    <li>Specify a log file location or use the default.</li>
+                    <li>Set the log level (Information, Warning, or Verbose).</li>
+                    <li>Click "Apply" and reproduce the issue you're experiencing.</li>
+                    <li>Check the log file for error messages or warnings.</li>
+                </ol>
+                <p>When reporting issues to support, include the log file and a description of your problem.</p>
+            </div> -->
+
+            <!-- FAQ Section -->
+            <div class="manual-section" id="faq">
+                <h2>8. Frequently Asked Questions</h2>
+                
+                <h4>Q: Does Smart Scroll work with all keyboards?</h4>
+                <p>A: Smart Scroll works with any keyboard or device that has media control Knob. <br>
+                    (Ya, I know this is a very niche application.)
+                </p>
+                
+                <h4>Q: Will Smart Scroll affect my normal volume control functionality?</h4>
+                <p>A: No, Smart Scroll only intercepts volume controls when in scroll mode. When not in scroll mode, your volume controls function completely normally.</p>
+                
+                <h4>Q: Can I use Smart Scroll with a mouse that has a volume wheel?</h4>
+                <p>A: Yes, Smart Scroll should work with any device that sends standard volume up/down/mute commands to Windows, including mice with dedicated volume controls.</p>
+                
+                <h4>Q: Does Smart Scroll work in all applications?</h4>
+                <p>A: Smart Scroll works in most Windows applications that support standard scrolling. However, some applications with custom interfaces or scrolling behaviors may have limited compatibility.</p>
+                
+                <h4>Q: Will Smart Scroll affect system performance?</h4>
+                <p>A: Smart Scroll is designed to be lightweight and uses minimal system resources (typically less than 10MB of RAM). It should have no noticeable impact on system performance.</p>
+                
+                <h4>Q: Is Smart Scroll open source?</h4>
+                <p>A: Yes, Smart Scroll is open-source software released under the MIT License. You can view and contribute to the source code on <a href="https://github.com/Aryan-Techie/SmartScroll" target="_blank">GitHub</a>.</p>
+                
+                <h4>Q: Can I use Smart Scroll commercially?</h4>
+                <p>A: Yes, Smart Scroll is free for both personal and commercial use under the terms of the MIT License.</p>
+                
+                <div class="note-box">
+                    <p>For more FAQs, visit the <a href="../../../web/pages/faq/">FAQ page</a> on our website.</p>
+                </div>
+            </div>
+
+            <!-- Support Section -->
+            <div class="manual-section" id="support">
+                <h2>9. Support and Contact</h2>
+                
+                <h3>Getting Help</h3>
+                <p>If you encounter issues or have questions not covered in this manual, there are several ways to get help:</p>
+                
+                <h4>GitHub Issues</h4>
+                <p>For bug reports, feature requests, or technical issues:</p>
+                <ol class="step-list">
+                    <li>Visit the <a href="https://github.com/Aryan-Techie/SmartScroll/issues" target="_blank">Smart Scroll Issues page</a> on GitHub.</li>
+                    <li>Check if your issue has already been reported.</li>
+                    <li>If not, click "New Issue" and provide detailed information about your problem or suggestion.</li>
+                </ol>
+                
+                <h4>Community Support</h4>
+                <p>Connect with other Smart Scroll users:</p>
+                <ul>
+                    <li>Join discussions in the <a href="https://github.com/Aryan-Techie/SmartScroll/discussions" target="_blank">GitHub Discussions</a> area.</li>
+                    <li>Share tips and customizations with the community.</li>
+                </ul>
+                
+                <h4>Email Support</h4>
+                <p>For private inquiries, you can contact the developer directly:</p>
+                <ul>
+                    <li>Email: <a href="mailto:admin@aroice.in">admin@aroice.in</a></li>
+                    <li>Please include your system information and a detailed description of your issue.</li>
+                </ul>
+                
+                <h3>Contributing to Smart Scroll</h3>
+                <p>Smart Scroll is an open-source project, and contributions are welcome:</p>
+                <ul>
+                    <li><strong>Code contributions:</strong> Fork the repository, make your changes, and submit a pull request.</li>
+                    <li><strong>Documentation:</strong> Help improve manuals, FAQs, or the wiki.</li>
+                    <li><strong>Testing:</strong> Try new features in development branches and provide feedback.</li>
+                    <li><strong>Translation:</strong> Help translate Smart Scroll into other languages.</li>
+                    <li><strong>Spread the word:</strong> Share Smart Scroll with others who might benefit from it.</li>
+                </ul>
+                
+                <div class="note-box">
+                    <p>When submitting bug reports, please include your Windows version, Smart Scroll version, and detailed steps to reproduce the issue.</p>
+                </div>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="page-navigation">
+                <a href="../../../" class="nav-prev">Back to Home</a>
+                <a href="../../../web/pages/faq/" class="nav-next">Frequently Asked Questions</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backdrop for mobile sidebar -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Sidebar Toggle Button (Mobile) -->
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="manualSidebar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button type="button" class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../../assets/icons/png/icon-48x48.png" alt="Smart Scroll Logo">
+                    <span>Smart Scroll</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="../../../index.html#features">Features</a>
+                        <a href="../../../index.html#download">Download</a>
+                        <a href="../../../index.html#documentation">Documentation</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="../../../web/pages/faq/index.html">FAQ</a>
+                        <a href="../../../SECURITY.md">Security</a>
+                        <a href="../../../CODE_OF_CONDUCT.md">Code of Conduct</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <a href="../../../Readme.md">About Project</a>
+                        <a href="../../../LICENCE">License</a>
+                        <a href="https://github.com/AROICE/SmartScroll" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AROICE. Smart Scroll is released under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Store navigation state to localStorage
+        function saveNavState() {
+            const navState = {};
+            
+            document.querySelectorAll('.nav-section-button').forEach(btn => {
+                const sectionId = btn.getAttribute('aria-controls');
+                navState[sectionId] = !btn.classList.contains('collapsed');
+            });
+            
+            localStorage.setItem('smartscroll_nav_state', JSON.stringify(navState));
+        }
+        
+        // Load navigation state from localStorage
+        function loadNavState() {
+            const savedState = localStorage.getItem('smartscroll_nav_state');
+            
+            if (savedState) {
+                try {
+                    const navState = JSON.parse(savedState);
+                    
+                    for (const [sectionId, isExpanded] of Object.entries(navState)) {
+                        const button = document.querySelector(`[aria-controls="${sectionId}"]`);
+                        const list = document.getElementById(sectionId);
+                        
+                        if (button && list) {
+                            if (!isExpanded) {
+                                button.classList.add('collapsed');
+                                button.setAttribute('aria-expanded', 'false');
+                                list.classList.add('collapsed');
+                            } else {
+                                button.classList.remove('collapsed');
+                                button.setAttribute('aria-expanded', 'true');
+                                list.classList.remove('collapsed');
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.error('Error loading navigation state:', e);
+                }
+            }
+        }
+        
+        // Toggle mobile menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Sidebar toggle functionality (mobile)
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const manualSidebar = document.getElementById('manualSidebar');
+        const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+        
+        // Toggle sidebar visibility on mobile
+        function toggleSidebar() {
+            const isVisible = manualSidebar.classList.toggle('active');
+            sidebarToggle.classList.toggle('active', isVisible);
+            sidebarToggle.setAttribute('aria-expanded', isVisible);
+            sidebarBackdrop.classList.toggle('active', isVisible);
+            
+            // Prevent scrolling of the body when sidebar is open
+            document.body.style.overflow = isVisible ? 'hidden' : '';
+        }
+        
+        sidebarToggle.addEventListener('click', toggleSidebar);
+        sidebarBackdrop.addEventListener('click', toggleSidebar);
+        
+        // Section collapsing in sidebar
+        document.querySelectorAll('.nav-section-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const isCollapsed = button.classList.toggle('collapsed');
+                const listId = button.getAttribute('aria-controls');
+                const list = document.getElementById(listId);
+                
+                button.setAttribute('aria-expanded', !isCollapsed);
+                list.classList.toggle('collapsed', isCollapsed);
+                
+                // Save navigation state
+                saveNavState();
+            });
+        });
+        
+        // Show/hide scroll to top button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scroll to top functionality
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Set focus back to the first main heading for screen readers
+            setTimeout(() => {
+                document.querySelector('h1').focus();
+            }, 500);
+        });
+        
+        // Smooth scrolling for anchor links with improved accessibility
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page jump
+                    history.pushState(null, null, targetId);
+                    
+                    // Set focus to the target heading for accessibility
+                    targetElement.setAttribute('tabindex', '-1');
+                    targetElement.focus();
+                    
+                    // Close sidebar on mobile when a link is clicked
+                    if (window.innerWidth <= 1024 && manualSidebar.classList.contains('active')) {
+                        toggleSidebar();
+                    }
+                }
+            });
+        });
+        
+        // Track active section based on scroll position
+        function updateActiveNavItem() {
+            const sections = document.querySelectorAll('.manual-section, section[id]');
+            const scrollPosition = window.pageYOffset;
+            
+            // Get current visible section
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            // Remove active class from all links
+            document.querySelectorAll('.nav-link, .nav-direct-link').forEach(link => {
+                link.classList.remove('active');
+                link.setAttribute('aria-current', 'false');
+            });
+            
+            // Add active class to current section links (includes subsection tracking)
+            if (current) {
+                // First check if we need to highlight a subsection
+                const directLink = document.querySelector(`.nav-direct-link[data-section="${current}"]`);
+                const subsectionLink = document.querySelector(`.nav-link[data-section="${current}"]`);
+                
+                if (subsectionLink) {
+                    subsectionLink.classList.add('active');
+                    subsectionLink.setAttribute('aria-current', 'page');
+                    
+                    // Make sure parent section is expanded
+                    const parentList = subsectionLink.closest('.nav-list');
+                    if (parentList && parentList.classList.contains('collapsed')) {
+                        const button = document.querySelector(`[aria-controls="${parentList.id}"]`);
+                        if (button) {
+                            button.classList.remove('collapsed');
+                            button.setAttribute('aria-expanded', 'true');
+                            parentList.classList.remove('collapsed');
+                            saveNavState();
+                        }
+                    }
+                } else if (directLink) {
+                    directLink.classList.add('active');
+                    directLink.setAttribute('aria-current', 'page');
+                }
+            }
+        }
+        
+        // Call on scroll and on page load
+        window.addEventListener('scroll', updateActiveNavItem);
+        
+        // Responsive behavior for tablet - convert to icon sidebar at specific breakpoint
+        function handleResponsiveSidebar() {
+            if (window.innerWidth <= 1024 && window.innerWidth > 768) {
+                manualSidebar.classList.add('compact', 'expand-on-hover');
+            } else {
+                manualSidebar.classList.remove('compact', 'expand-on-hover');
+            }
+        }
+        
+        window.addEventListener('resize', handleResponsiveSidebar);
+        
+        // Initialize on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load navigation state from localStorage
+            loadNavState();
+            
+            // Initial check for active section
+            updateActiveNavItem();
+            
+            // Set up responsive sidebar
+            handleResponsiveSidebar();
+            
+            // Get current URL hash
+            const hash = window.location.hash;
+            
+            // If hash exists, scroll to the corresponding section
+            if (hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(hash);
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Set focus to the target heading for accessibility
+                        targetElement.setAttribute('tabindex', '-1');
+                        targetElement.focus();
+                    }
+                }, 100);
+            }
+        });
+
+        // Notion-like sidebar behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('manualSidebar');
+            const pinButton = document.getElementById('pinSidebar');
+            let sidebarState = localStorage.getItem('smartscroll_sidebar_state') || 'auto-hide';
+            let mouseNearSidebar = false;
+            let sidebarHoverTimeout;
+            
+            // Initialize sidebar state from localStorage
+            if (sidebarState === 'pinned') {
+                sidebar.classList.remove('auto-hide');
+                pinButton.classList.add('pinned');
+            } else {
+                sidebar.classList.add('auto-hide');
+                pinButton.classList.remove('pinned');
+            }
+            
+            // Pin button click handler
+            pinButton.addEventListener('click', function() {
+                if (sidebar.classList.contains('auto-hide')) {
+                    // Pin the sidebar
+                    sidebar.classList.remove('auto-hide');
+                    pinButton.classList.add('pinned');
+                    localStorage.setItem('smartscroll_sidebar_state', 'pinned');
+                } else {
+                    // Unpin the sidebar
+                    sidebar.classList.add('auto-hide');
+                    pinButton.classList.remove('pinned');
+                    localStorage.setItem('smartscroll_sidebar_state', 'auto-hide');
+                }
+            });
+            
+            // Mouse movement tracking for auto-hide behavior
+            document.addEventListener('mousemove', function(e) {
+                if (sidebarState === 'pinned') return;
+                
+                const sidebarRect = sidebar.getBoundingClientRect();
+                const buffer = 50; // Distance in pixels that activates the sidebar
+                
+                // Check if mouse is near the sidebar
+                const isNear = (
+                    e.clientX <= sidebarRect.right + buffer && 
+                    e.clientY >= sidebarRect.top && 
+                    e.clientY <= sidebarRect.bottom
+                );
+                
+                if (isNear !== mouseNearSidebar) {
+                    mouseNearSidebar = isNear;
+                    
+                    if (isNear) {
+                        // Mouse approached sidebar - clear any hide timeout and show it
+                        clearTimeout(sidebarHoverTimeout);
+                        sidebar.classList.add('hovered');
+                    } else {
+                        // Mouse left sidebar area - set a timeout to hide it
+                        clearTimeout(sidebarHoverTimeout);
+                        sidebarHoverTimeout = setTimeout(() => {
+                            sidebar.classList.remove('hovered');
+                        }, 500); // Delay before hiding when mouse leaves
+                    }
+                }
+            });
+            
+            // Add a listener for mobile responsiveness
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 1024) {
+                    // On mobile and tablet views, disable auto-hide
+                    sidebar.classList.remove('auto-hide', 'hovered');
+                } else if (sidebarState !== 'pinned') {
+                    // On desktop, restore auto-hide if not pinned
+                    sidebar.classList.add('auto-hide');
+                }
+            });
+            
+            // Initial check for screen size
+            if (window.innerWidth <= 1024) {
+                sidebar.classList.remove('auto-hide', 'hovered');
+            }
+        });
+    </script>
+</body>
+</html>
