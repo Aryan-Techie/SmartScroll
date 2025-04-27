@@ -208,7 +208,7 @@ Made with ❤️ by **[Aryan Techie](https://aryan.aroice.in)** (aka Aroice)
 ## ❓ Frequently Asked Questions
 
 <p>
-  <a href="./FAQ.md">
+  <a href="https://smart-scroll.aroice.in/web/pages/faq/">
     <img src="https://img.shields.io/badge/View%20Complete-FAQ-%230099ff?style=for-the-badge&logo=questionmark" alt="View Complete FAQ">
   </a>
 </p>
