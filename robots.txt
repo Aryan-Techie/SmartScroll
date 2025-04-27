@@ -3,9 +3,39 @@ User-agent: *
 Allow: /
 Allow: /web/pages/manual/
 Allow: /web/pages/faq/
+Allow: /web/css/
+Allow: /web/js/
+Allow: /assets/
+Allow: /Media/
+Allow: /Releases/
 
-# Don't index the 404 page
+# Don't index these files/directories
 Disallow: /404.html
+Disallow: /CNAME
+Disallow: /LICENCE
+Disallow: /CODE_OF_CONDUCT.md
+Disallow: /SECURITY.md
+
+# Set crawl delay to prevent server overload
+Crawl-delay: 1
+
+# Google-specific settings
+User-agent: Googlebot
+Allow: /
+# Allows Googlebot to access CSS and JS (best practice)
+Allow: /*.css$
+Allow: /*.js$
+
+# Google Image specific settings
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /Media/
+Allow: /Releases/V-1.0.0/assets/
+
+# Bing specific settings
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
 
 # Sitemap location
 Sitemap: https://smartscroll.aroice.in/sitemap.xml
