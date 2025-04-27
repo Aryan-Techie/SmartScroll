@@ -13,6 +13,67 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styling for Razorpay and GitHub buttons */
+        #razorpay-btn-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 !important;
+            overflow: hidden;
+            position: relative;
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            width: 200px !important; /* Increased width */
+            height: 41px !important; /* Match GitHub button height */
+        }
+        
+        #razorpay-btn-container form {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        /* Make GitHub button match Razorpay button */
+        .github-sponsor-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px !important;
+            background-color: #24292e !important;
+            border-radius: 4px !important;
+            transition: all 0.2s ease !important;
+            text-decoration: none !important;
+            color: white !important;
+            font-weight: 500 !important;
+            font-family: 'Inter', sans-serif !important;
+            height: 41px !important; /* Consistent height */
+            min-width: 160px !important; /* Consistent width */
+            box-sizing: border-box !important;
+        }
+        
+        .github-sponsor-btn:hover {
+            background-color: #2f363d !important;
+        }
+        
+        .github-sponsor-btn img {
+            margin-right: 8px;
+            margin-bottom: 4px;
+            height: 25px;
+            width: auto;
+        }
+        
+        /* Support buttons container styling */
+        .support-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            align-items: center !important; /* Ensure buttons align vertically */
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -52,7 +113,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="Media/demo.gif" alt="Smart Scroll in action" class="demo-gif">
+                <img src="https://github.com/Aryan-Techie/SmartScroll/raw/main/Media/demo.gif" alt="Smart Scroll in action" class="demo-gif">
             </div>
         </div>
     </section>
@@ -242,7 +303,7 @@
             <div class="video-showcase">
                 <div class="video-container">
                     <div class="video-wrapper">
-                        <video id="demo-video" poster="Media/demo1.gif" preload="metadata" autoplay="false" muted="false" playsinline="false">
+                        <video id="demo-video" poster="https://github.com/Aryan-Techie/SmartScroll/raw/main/Media/demo.gif" preload="metadata" autoplay="false" muted="false" playsinline="false">
                             <source src="Media/demo.webm" type="video/webm">
                             <source src="Media/demo.mp4" type="video/mp4">
                             Your browser does not support the video tag.
@@ -401,10 +462,11 @@
             <div class="support-content" style="text-align: center; max-width: 700px; margin: 0 auto; padding: 20px 0 40px;">
                 <p>If Smart Scroll made your workflow better, consider supporting its development.<br>Your contribution helps keep it free and evolving!</p>
                 <div class="support-buttons" style="display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap;">
-                    <a href="https://razorpay.me/@aroice" target="_blank" class="btn btn-primary">
-                        Support via Razorpay
-                    </a>
-                    <a href="https://github.com/sponsors/Aryan-Techie" target="_blank" class="btn btn-secondary">
+                    <div id="razorpay-btn-container">
+                        <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_QO9pn8GJgo0QjE" async> </script> </form>
+                    </div>
+                    <a href="https://github.com/sponsors/Aryan-Techie" target="_blank" class="github-sponsor-btn">
+                        <img src="\Releases\V-1.0.0\assets\pink.png" alt="GitHub Sponsors">
                         Sponsor on GitHub
                     </a>
                 </div>
