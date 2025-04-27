@@ -29,7 +29,6 @@
             font-family: 'Inter', sans-serif;
             background: var(--dark);
             color: white;
-            cursor: none;
         }
         
         .noise {
@@ -52,6 +51,7 @@
             align-items: center;
             justify-content: center;
             z-index: 1;
+            padding: 0 20px;
         }
         
         .knob {
@@ -88,6 +88,8 @@
             z-index: 1;
             color: var(--primary);
             transform-origin: center;
+            line-height: 0.8;
+            margin-top: -50px;
         }
         
         .circle-text {
@@ -134,6 +136,11 @@
             opacity: 0;
             animation: fadeIn 1s ease 1s forwards;
             z-index: 10;
+            background-color: rgba(18, 18, 18, 0.8); /* Semi-transparent background */
+            padding: 15px 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
         
         @keyframes fadeIn {
@@ -159,7 +166,7 @@
             box-shadow: 0 10px 20px rgba(41, 98, 255, 0.3);
         }
         
-        .custom-cursor {
+        #custom-cursor {
             position: fixed;
             width: 40px;
             height: 40px;
@@ -174,7 +181,7 @@
             justify-content: center;
         }
         
-        .custom-cursor::after {
+        #custom-cursor::after {
             content: '';
             width: 5px;
             height: 5px;
@@ -182,7 +189,7 @@
             border-radius: 50%;
         }
         
-        .custom-cursor.active {
+        #custom-cursor.active {
             width: 65px;
             height: 65px;
             background: rgba(58, 123, 202, 0.2);
@@ -217,9 +224,14 @@
             }
             
             .message {
-                margin-top: 200px;
+                margin-top: 180px;
                 font-size: 1.2rem;
                 max-width: 280px;
+                padding: 12px 20px;
+            }
+            
+            #custom-cursor {
+                display: none;
             }
         }
     </style>
@@ -249,28 +261,46 @@
     
     <a href="index.html" class="home-link">Back to reality</a>
     
-    <div class="custom-cursor" id="cursor"></div>
+    <div id="custom-cursor"></div>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Custom cursor
-            const cursor = document.getElementById('cursor');
+            // Custom cursor setup
+            const customCursor = document.getElementById('custom-cursor');
             const links = document.querySelectorAll('a');
             
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-            
-            links.forEach(link => {
-                link.addEventListener('mouseenter', () => {
-                    cursor.classList.add('active');
+            // Check if not on mobile
+            if (window.innerWidth > 768) {
+                // Hide the default cursor
+                document.body.style.cursor = 'none';
+                
+                // Update custom cursor position
+                document.addEventListener('mousemove', function(e) {
+                    if (customCursor) {
+                        window.requestAnimationFrame(function() {
+                            customCursor.style.left = e.clientX + 'px';
+                            customCursor.style.top = e.clientY + 'px';
+                        });
+                    }
                 });
                 
-                link.addEventListener('mouseleave', () => {
-                    cursor.classList.remove('active');
+                // Cursor effects on interactive elements
+                links.forEach(link => {
+                    link.addEventListener('mouseenter', function() {
+                        customCursor.classList.add('active');
+                    });
+                    
+                    link.addEventListener('mouseleave', function() {
+                        customCursor.classList.remove('active');
+                    });
                 });
-            });
+            } else {
+                // On mobile, show regular cursor and hide custom cursor
+                document.body.style.cursor = 'auto';
+                if (customCursor) {
+                    customCursor.style.display = 'none';
+                }
+            }
             
             // Create scrolling lines
             const scrollLines = document.getElementById('scrollLines');
@@ -278,70 +308,7 @@
                 const line = document.createElement('div');
                 line.className = 'scroll-line';
                 line.style.left = Math.random() * 100 + '%';
-                line.style.animationDuration = (Math.random() * 2 + 1) + 's';
-                line.style.animationDelay = (Math.random() * 2) + 's';
                 scrollLines.appendChild(line);
-            });
-            
-            // Magnetic effect for knob
-            const knob = document.getElementById('knob');
-            const magneticArea = document.getElementById('magneticArea');
-            let knobAngle = 0;
-            let isInMagneticArea = false;
-            
-            magneticArea.addEventListener('mousemove', (e) => {
-                isInMagneticArea = true;
-                
-                const rect = magneticArea.getBoundingClientRect();
-                const centerX = rect.left + rect.width / 2;
-                const centerY = rect.top + rect.height / 2;
-                
-                const deltaX = e.clientX - centerX;
-                const deltaY = e.clientY - centerY;
-                
-                const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-                const maxDistance = rect.width / 2;
-                
-                if (distance < maxDistance) {
-                    const normDist = distance / maxDistance;
-                    const scale = 1 - normDist * 0.3;
-                    
-                    knobAngle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
-                    
-                    knob.style.transform = `translate(calc(-50% + ${deltaX * 0.1}px), calc(-50% + ${deltaY * 0.1}px)) rotate(${knobAngle}deg) scale(${scale})`;
-                }
-            });
-            
-            magneticArea.addEventListener('mouseleave', () => {
-                isInMagneticArea = false;
-                knob.style.transform = 'translate(-50%, -50%) rotate(0deg) scale(1)';
-            });
-            
-            // On smaller screens, add touch support
-            if (window.innerWidth <= 768) {
-                document.body.style.cursor = 'auto';
-                cursor.style.display = 'none';
-                
-                let touchStartX, touchStartY;
-                
-                document.addEventListener('touchstart', (e) => {
-                    const touch = e.touches[0];
-                    touchStartX = touch.clientX;
-                    touchStartY = touch.clientY;
-                });
-                
-                document.addEventListener('touchmove', (e) => {
-                    const touch = e.touches[0];
-                    const deltaX = touch.clientX - touchStartX;
-                    const deltaY = touch.clientY - touchStartY;
-                    
-                    const knobAngle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
-                    knob.style.transform = `translate(-50%, -50%) rotate(${knobAngle}deg)`;
-                });
-                
-                document.addEventListener('touchend', () => {
-                    knob.style.transform = 'translate(-50%, -50%) rotate(0deg)';
-                });
             }
             
             // Add scrolling animation to vertical lines
@@ -354,23 +321,73 @@
             });
             
             // Create scrolling animation
-            function scrollDown() {
-                return `
-                    @keyframes scrollDown {
-                        0% {
-                            transform: translateY(-100%);
-                        }
-                        100% {
-                            transform: translateY(100vh);
-                        }
-                    }
-                `;
-            }
-            
-            // Add keyframes to document
             const style = document.createElement('style');
-            style.textContent = scrollDown();
+            style.textContent = `
+                @keyframes scrollDown {
+                    0% {
+                        transform: translateY(-100%);
+                    }
+                    100% {
+                        transform: translateY(100vh);
+                    }
+                }
+            `;
             document.head.appendChild(style);
+            
+            // Magnetic effect for knob
+            const knob = document.getElementById('knob');
+            const magneticArea = document.getElementById('magneticArea');
+            
+            if (magneticArea && knob) {
+                magneticArea.addEventListener('mousemove', function(e) {
+                    const rect = magneticArea.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    const deltaX = e.clientX - centerX;
+                    const deltaY = e.clientY - centerY;
+                    
+                    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                    const maxDistance = rect.width / 2;
+                    
+                    if (distance < maxDistance) {
+                        const normDist = distance / maxDistance;
+                        const scale = 1 - normDist * 0.3;
+                        
+                        const knobAngle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
+                        
+                        knob.style.transform = `translate(calc(-50% + ${deltaX * 0.1}px), calc(-50% + ${deltaY * 0.1}px)) rotate(${knobAngle}deg) scale(${scale})`;
+                    }
+                });
+                
+                magneticArea.addEventListener('mouseleave', function() {
+                    knob.style.transform = 'translate(-50%, -50%) rotate(0deg) scale(1)';
+                });
+                
+                // Touch support for mobile
+                if (window.innerWidth <= 768) {
+                    let touchStartX, touchStartY;
+                    
+                    magneticArea.addEventListener('touchstart', function(e) {
+                        const touch = e.touches[0];
+                        touchStartX = touch.clientX;
+                        touchStartY = touch.clientY;
+                    });
+                    
+                    magneticArea.addEventListener('touchmove', function(e) {
+                        const touch = e.touches[0];
+                        const deltaX = touch.clientX - touchStartX;
+                        const deltaY = touch.clientY - touchStartY;
+                        
+                        const knobAngle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
+                        knob.style.transform = `translate(-50%, -50%) rotate(${knobAngle}deg)`;
+                    });
+                    
+                    magneticArea.addEventListener('touchend', function() {
+                        knob.style.transform = 'translate(-50%, -50%) rotate(0deg)';
+                    });
+                }
+            }
         });
     </script>
 </body>
