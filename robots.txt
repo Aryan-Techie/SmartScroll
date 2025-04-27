@@ -1,0 +1,11 @@
+# robots.txt for smartscroll.aroice.in
+User-agent: *
+Allow: /
+Allow: /web/pages/manual/
+Allow: /web/pages/faq/
+
+# Don't index the 404 page
+Disallow: /404.html
+
+# Sitemap location
+Sitemap: https://smartscroll.aroice.in/sitemap.xml
