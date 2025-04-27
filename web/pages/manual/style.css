@@ -1,4 +1,4 @@
-        /* Additional styles specific to the manual page */
+/* Additional styles specific to the manual page */
         .main-container {
             display: block;
             position: relative;
@@ -38,20 +38,6 @@
         .manual-sidebar.auto-hide.hovered {
             transform: translate(0, -50%);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Sidebar activator strip */
-        .sidebar-activator {
-            position: fixed;
-            top: 55%;
-            left: 0;
-            transform: translateY(-50%);
-            width: 10px;
-            height: 75vh;
-            max-height: 650px;
-            z-index: 98;
-            background-color: transparent;
-            cursor: pointer;
         }
 
         .manual-sidebar.auto-hide .docs-nav-content,
@@ -807,4 +793,136 @@
                 padding: 15px;
             }
         }
+
+/* Additional navbar styles to ensure proper styling without affecting sidebar */
+header.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 0;
+    transition: box-shadow 0.3s ease;
+}
+  
+header.header.scrolled {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure header navbar doesn't conflict with sidebar styles */
+header.header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+header.header .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+header.header .logo:hover {
+    color: var(--primary-color);
+}
+  
+header.header .logo img {
+    height: 36px;
+    margin-right: 10px;
+}
+  
+header.header .nav-links {
+    display: flex;
+    gap: 30px;
+}
+  
+header.header .nav-link {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+  
+header.header .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+  
+header.header .nav-link:hover {
+    color: var(--primary-color);
+}
+  
+header.header .nav-link:hover::after {
+    width: 100%;
+}
+  
+header.header .nav-cta {
+    padding: 8px 16px;
+}
+  
+header.header .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+  
+header.header .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 2px 0;
+    transition: var(--transition);
+}
+  
+header.header .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+  
+header.header .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+  
+header.header .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navbar mobile responsive styles */
+@media (max-width: 768px) {
+    header.header .nav-links, 
+    header.header .nav-cta {
+        display: none;
+    }
+    
+    header.header .menu-toggle {
+        display: flex;
+    }
+    
+    header.header .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        gap: 15px;
+    }
+}
+
+/* Ensure hero section is properly positioned */
+.hero {
+    padding-top: 130px;
+}
 
