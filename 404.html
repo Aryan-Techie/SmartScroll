@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Smart Scroll</title>
+    <meta name="description" content="The page you are looking for cannot be found.">
+    <link rel="icon" href="assets/icons/png/icon-32x32.png" sizes="32x32">
+    <link rel="icon" href="assets/icons/png/icon-128x128.png" sizes="128x128">
+    <link rel="icon" href="assets/icons/png/icon-256x256.png" sizes="256x256">
+    <link rel="icon" href="assets/icons/png/icon-512x512.png" sizes="512x512">
+    <link rel="stylesheet" href="web/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-page {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--white);
+            padding: 50px 20px;
+        }
+        
+        .error-content {
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .error-visual {
+            position: relative;
+            height: 180px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .error-numbers {
+            font-size: 9rem;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            opacity: 0.9;
+            letter-spacing: -5px;
+        }
+        
+        .scroll-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            opacity: 0.1;
+        }
+        
+        .scroll-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .scroll-line {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background-color: var(--primary-color);
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.5;
+            overflow: hidden;
+        }
+        
+        .scroll-line::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            background-color: white;
+            top: -30px;
+            left: 0;
+            animation: scrollDown 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes scrollDown {
+            0% {
+                top: -30px;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            font-weight: 700;
+        }
+        
+        .error-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .home-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(58, 123, 202, 0.2);
+            margin-bottom: 50px;
+        }
+        
+        .home-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(58, 123, 202, 0.25);
+            color: white;
+        }
+        
+        .links-minimal {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .link-minimal {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .link-minimal::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .link-minimal:hover {
+            color: var(--primary-color);
+        }
+        
+        .link-minimal:hover::after {
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .error-numbers {
+                font-size: 7rem;
+            }
+            
+            .error-title {
+                font-size: 1.8rem;
+            }
+            
+            .error-description {
+                font-size: 1rem;
+            }
+            
+            .links-minimal {
+                flex-wrap: wrap;
+                gap: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="assets/icons/png/icon-48x48.png" alt="Smart Scroll Logo">
+                    <span>Smart Scroll</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                    <a href="index.html#about" class="nav-link">Origin</a>
+                    <a href="index.html#documentation" class="nav-link">Documentation</a>
+                    <a href="index.html#support" class="nav-link">Support</a>
+                    <a href="index.html#faq" class="nav-link">FAQ</a>
+                </div>
+                <a href="index.html#download" class="btn btn-primary nav-cta">Download</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 404 Error Section -->
+    <section class="error-page">
+        <div class="container">
+            <div class="error-content">
+                <div class="error-visual">
+                    <div class="error-numbers">404</div>
+                    <div class="scroll-icon">
+                        <img src="Releases/V-1.0.0/assets/key.png" alt="Volume knob icon">
+                    </div>
+                    <div class="scroll-line"></div>
+                </div>
+                
+                <h1 class="error-title">Page Not Found</h1>
+                <p class="error-description">Looks like you've scrolled too far. This page doesn't exist.</p>
+                
+                <a href="index.html" class="home-button">Back to Home</a>
+                
+                <div class="links-minimal">
+                    <a href="index.html#features" class="link-minimal">Features</a>
+                    <a href="index.html#download" class="link-minimal">Download</a>
+                    <a href="web/pages/faq/" class="link-minimal">FAQ</a>
+                    <a href="https://github.com/Aryan-Techie/SmartScroll" class="link-minimal">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/icons/png/icon-48x48.png" alt="Smart Scroll Logo">
+                    <span>Smart Scroll</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#download">Download</a>
+                        <a href="index.html#documentation">Documentation</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="web/pages/faq/index.html">FAQ</a>
+                        <a href="SECURITY.md">Security</a>
+                        <a href="CODE_OF_CONDUCT.md">Code of Conduct</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <a href="Readme.md">About Project</a>
+                        <a href="LICENCE">License</a>
+                        <a href="https://github.com/AROICE/SmartScroll" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <div class="product-hunt-badge">
+                    <a href="https://www.producthunt.com/posts/smart-scroll?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-smart&#0045;scroll" target="_blank">
+                        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=958085&theme=light&t=1745767801777" alt="Smart&#0032;Scroll - Transform&#0032;your&#0032;volume&#0032;knob&#0032;into&#0032;a&#0032;scroll&#0032;wheel | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AROICE. Smart Scroll is released under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="web/js/script.js"></script>
+    <script>
+        // Handle mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    menuToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
