@@ -1400,6 +1400,34 @@
     outline: 2px solid var(--primary-light);
     outline-offset: 2px;
   }
+
+  /* Remove default focus styles for navbar links and add custom ones */
+  .nav-link:focus {
+    outline: none;
+    box-shadow: none;
+    color: var(--primary-color);
+  }
+
+  .nav-link:focus::after {
+    width: 100%; /* Show underline on focus, matching hover effect */
+  }
+
+  /* Remove outline from logo focus */
+  .logo:focus {
+    outline: none;
+  }
+
+  /* Custom focus style for buttons to remove default outline */
+  .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 123, 202, 0.3);
+  }
+
+  /* Download button focus style */
+  .nav-cta:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 123, 202, 0.3);
+  }
   
   /* Responsive Styles */
   @media (max-width: 992px) {
@@ -1614,10 +1642,6 @@
     flex-wrap: wrap;
     align-items: center !important; /* Ensure buttons align vertically */
 }
-
-
-
-
 
 #razorpay-btn-container {
     width: 227px !important;
