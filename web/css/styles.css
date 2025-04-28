@@ -1774,6 +1774,39 @@
     padding: 0 !important;
 }
 
+/* Device-specific display classes */
+.mobile-only-btn {
+  display: none !important; /* Hidden by default (on desktop) */
+}
+
+.desktop-only-btn {
+  display: block !important; /* Shown by default (on desktop) */
+}
+
+/* Styling for mobile Razorpay button */
+.razorpay-mobile-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #528FF0 !important;
+  color: white !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  border-radius: 4px;
+  height: 41px;
+  min-width: 227px;
+  padding: 0 24px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.razorpay-mobile-btn:hover {
+  background-color: #3A7BCA !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
 /* Mobile-specific fixes */
 @media (max-width: 767px) {
   /* Fix for GIFs not displaying on mobile */
@@ -1827,5 +1860,17 @@
     margin: 0 auto !important;
     height: 45px !important;
     display: flex !important;
+  }
+
+  .mobile-only-btn {
+    display: flex !important; /* Show on mobile */
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    height: 45px !important;
+  }
+  
+  .desktop-only-btn {
+    display: none !important; /* Hide on mobile */
   }
 }
