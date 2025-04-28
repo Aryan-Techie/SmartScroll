@@ -1,2 +1,3 @@
+# GitHub Funding configuration
 github: Aryan-Techie
-Custom: "https://razorpay.me/@aroice"
+custom: ["https://razorpay.me/@aroice"]
