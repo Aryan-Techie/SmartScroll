@@ -802,6 +802,49 @@
     }
   }
   
+  /* Video section media queries */
+  @media (max-width: 768px) {
+    /* Improve video container display on mobile */
+    .video-container {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .video-wrapper {
+      padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
+    }
+    
+    .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Changed from cover to contain */
+      display: block !important; /* Force display */
+    }
+    
+    /* Ensure video controls are visible and properly sized */
+    .play-btn {
+      width: 60px;
+      height: 60px;
+    }
+    
+    /* Ensure poster image displays on mobile */
+    .video-wrapper video[poster] {
+      object-fit: contain;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 200px;
+    }
+    
+    /* Handle video scaling */
+    #demo-video {
+      transform: scale(1) !important; /* Reset any transforms that might affect scaling */
+      -webkit-transform: scale(1) !important;
+    }
+  }
+  
   /* About Section Styles - Updated Layout */
   .about {
     background-color: var(--white);
