@@ -129,33 +129,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const videoWrapper = document.querySelector('.video-wrapper');
     const video = document.getElementById('demo-video');
     const playBtn = document.getElementById('play-btn');
-    const fullscreenBtn = document.getElementById('fullscreen-btn');
     
     if (video && playBtn) {
-        // Initial state - add paused class since video starts paused
-        videoWrapper.classList.add('paused');
-        
         // Play/pause functionality
         function togglePlay() {
             if (video.paused || video.ended) {
                 video.play();
                 videoWrapper.classList.add('playing');
-                videoWrapper.classList.remove('paused');
             } else {
                 video.pause();
                 videoWrapper.classList.remove('playing');
-                videoWrapper.classList.add('paused');
-            }
-        }
-        
-        // Fullscreen functionality for mobile
-        function toggleFullscreen() {
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) { /* Safari */
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) { /* IE11 */
-                video.msRequestFullscreen();
             }
         }
         
@@ -163,15 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
         playBtn.addEventListener('click', togglePlay);
         video.addEventListener('click', togglePlay);
         
-        // Fullscreen button event listener (mobile only)
-        if (fullscreenBtn) {
-            fullscreenBtn.addEventListener('click', toggleFullscreen);
-        }
-        
         // Show controls when video ends
         video.addEventListener('ended', () => {
             videoWrapper.classList.remove('playing');
-            videoWrapper.classList.add('paused');
         });
         
         // Pause video when it's out of viewport
@@ -179,7 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isInViewport(video) && !video.paused) {
                 video.pause();
                 videoWrapper.classList.remove('playing');
-                videoWrapper.classList.add('paused');
             }
         });
     }
