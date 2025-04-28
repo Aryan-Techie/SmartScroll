@@ -357,7 +357,11 @@
   .demo-gif {
     border-radius: var(--radius);
     box-shadow: var(--shadow-large);
+    width: 100%;
     max-width: 450px;
+    height: auto;
+    object-fit: contain;
+    display: block;
   }
   
   @keyframes fadeInUp {
@@ -1768,4 +1772,60 @@
 .github-sponsor-btn {
     width: 227px !important;
     padding: 0 !important;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 767px) {
+  /* Fix for GIFs not displaying on mobile */
+  .hero-image img.demo-gif {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Fix for video poster GIF in demo section */
+  .video-wrapper video {
+    border-radius: var(--radius);
+  }
+  
+  /* Fix for Razorpay button on mobile */
+  #razorpay-btn-container {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: block !important;
+    height: auto !important;
+    min-height: 45px !important;
+  }
+  
+  #razorpay-btn-container form {
+    width: 100% !important;
+    display: block !important;
+  }
+  
+  #razorpay-btn-container iframe {
+    width: 100% !important;
+    max-width: 300px !important;
+    min-height: 45px !important;
+    display: block !important;
+  }
+  
+  .support-buttons {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .github-sponsor-btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    height: 45px !important;
+    display: flex !important;
+  }
 }
