@@ -653,6 +653,7 @@
     cursor: pointer;
   }
   
+  /* Video controls styling */
   .video-controls {
     position: absolute;
     top: 0;
@@ -663,21 +664,26 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.2);
-    opacity: 1;
+    opacity: 0;
     transition: opacity 0.3s ease;
   }
   
-  .video-wrapper.playing .video-controls {
-    opacity: 0;
+  .video-wrapper:hover .video-controls,
+  .video-wrapper.paused .video-controls {
+    opacity: 1;
   }
   
-  .play-btn {
-    width: 80px;
-    height: 80px;
+  /* Fullscreen button styling */
+  .fullscreen-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 2px solid var(--white);
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--white);
+    display: none; /* Hidden by default */
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -687,15 +693,43 @@
     outline: none;
   }
   
-  .play-btn svg {
-    width: 30px;
-    height: 30px;
-    margin-left: 5px;
+  .fullscreen-btn:hover {
+    background-color: var(--primary-color);
   }
   
-  .play-btn:hover {
-    background-color: var(--primary-color);
-    transform: scale(1.1);
+  .fullscreen-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Mobile-only class - only show on mobile devices */
+  .mobile-only {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .mobile-only {
+      display: flex;
+    }
+  }
+  
+  .video-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .video-wrapper:hover .video-controls,
+  .video-wrapper.paused .video-controls {
+    opacity: 1;
   }
   
   .video-caption {
@@ -794,11 +828,54 @@
       width: 24px;
       height: 24px;
     }
+    
+    /* Improved mobile styles for video */
+    .video-wrapper {
+      max-height: 300px;
+    }
   }
   
   @media (max-width: 576px) {
     .video-highlights {
       flex-direction: column;
+    }
+    
+    /* Better mobile responsiveness for video container */
+    .video-container {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .video-wrapper {
+      max-height: 240px;
+    }
+    
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .play-btn {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .play-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  /* Extra small devices */
+  @media (max-width: 400px) {
+    .video-wrapper {
+      height: auto;
+      max-height: 200px;
+      padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
+    }
+    
+    .video-wrapper video {
+      object-fit: contain;
     }
   }
   
