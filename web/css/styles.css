@@ -803,7 +803,7 @@
   }
   
   /* Video section media queries */
-  @media (max-width: 768px) {
+  @media (max-width: 1064px) {
     /* Improve video container display on mobile */
     .video-container {
       width: 100%;
@@ -1145,7 +1145,7 @@
     }
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1064px) {
     .about-image {
       width: 100%;
     }
@@ -1631,7 +1631,7 @@
     }
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1064px) {
     .hero .container {
       flex-direction: column;
     }
