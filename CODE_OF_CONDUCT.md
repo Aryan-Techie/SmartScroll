@@ -21,7 +21,7 @@ The Smart Scroll project is committed to providing a friendly, safe, and welcomi
 ## Reporting Issues
 
 If you experience or witness unacceptable behavior, please contact:
-- Project Maintainer: Aryan Techie (AROICE)
+- Project Maintainer: Aryan Techie (AROICE™)
 - Instagram: [@aryantechie](https://instagram.com/aryantechie)
 - Email: [aryan@aroice.in](mailto:aryan@aroice.in)
 - Website: [aroice.in](https://aroice.in)
