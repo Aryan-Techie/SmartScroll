@@ -224,5 +224,3 @@ Have questions about Smart Scroll? We've moved our comprehensive FAQ to a dedica
 If you don't find your answer in the FAQ, feel free to [open an issue](https://github.com/Aryan-Techie/SmartScroll/issues) with your question!
 
 ---
-### 🎛️ Smart Scroll — Enhance Your Workflow & Reimagine Your Volume Knob.
----
